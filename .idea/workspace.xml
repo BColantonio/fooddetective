@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ccdf9438-a8dc-454f-807b-f6048db5f75b" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="ProjectId" id="1YTHVR43Ta7vTuuxHEElkwlPM9K" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.5.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ccdf9438-a8dc-454f-807b-f6048db5f75b" name="Default Changelist" comment="" />
+      <created>1582959686286</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582959686286</updated>
+      <workItem from="1582959692935" duration="131000" />
+      <workItem from="1582959843748" duration="4615000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1238" height="175" key="GridCell.Tab.0.bottom" timestamp="1582960406356">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state width="1238" height="175" key="GridCell.Tab.0.bottom/0.23.1280.709@0.23.1280.709" timestamp="1582960406356" />
+    <state width="1238" height="175" key="GridCell.Tab.0.center" timestamp="1582960406355">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state width="1238" height="175" key="GridCell.Tab.0.center/0.23.1280.709@0.23.1280.709" timestamp="1582960406355" />
+    <state width="1238" height="175" key="GridCell.Tab.0.left" timestamp="1582960406354">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state width="1238" height="175" key="GridCell.Tab.0.left/0.23.1280.709@0.23.1280.709" timestamp="1582960406354" />
+    <state width="1238" height="175" key="GridCell.Tab.0.right" timestamp="1582960406355">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state width="1238" height="175" key="GridCell.Tab.0.right/0.23.1280.709@0.23.1280.709" timestamp="1582960406355" />
+    <state x="319" y="210" key="com.intellij.ide.util.TipDialog" timestamp="1582959856687">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state x="319" y="210" key="com.intellij.ide.util.TipDialog/0.23.1280.709@0.23.1280.709" timestamp="1582959856687" />
+    <state x="0" y="182" width="818" height="550" key="find.popup" timestamp="1582963623676">
+      <screen x="0" y="23" width="1280" height="709" />
+    </state>
+    <state x="0" y="182" width="818" height="550" key="find.popup/0.23.1280.709@0.23.1280.709" timestamp="1582963623676" />
+  </component>
+</project>

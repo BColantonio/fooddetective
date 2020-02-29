@@ -1,0 +1,36 @@
+<div id="logo"></div>
+<div id="login2">
+    <div class="container bar">
+        <label class="floatLeft" for="navBtn"><span></span></label>
+    </div>
+    <div id="search">
+        <form id="product-search" action="/simpleSearch" enctype="application/x-www-form-urlencoded">
+            <input type="text" name="mySearch" id="mySearch">
+            <input type="submit" value="Search">
+        </form>
+        <!-- <script>
+            localStorage.setItem("serialNumber", "abc123def456");
+        </script> -->
+    </div>
+    <div class="container">
+        <input type="checkbox" class="navBtn" id="navBtn" />
+        <nav>
+            <div class="row">
+                <div class="form-p">
+                    <form action="/signup" method="post">
+                        <div>
+                            <label>Username:</label>
+                            <input type="text" name="username" /><br/>
+                        </div>
+                        <div>
+                            <label>Password:</label>
+                            <input type="password" name="password" />
+                        </div>
+                        <div><input type="submit" value="Sign Up" /></div>
+                    </form>
+                    <p><a href="">Forget your password ?</a></p>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
