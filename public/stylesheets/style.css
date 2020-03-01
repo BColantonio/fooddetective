@@ -3,7 +3,7 @@ body {
   margin: auto;
   /* border: solid rgb(54, 199, 24) 2px; */
 
-  background-image: url(../Images/body3.png);
+  background-image: url(../images/body3.png);
 }
 #page {
   display:flex;
@@ -28,7 +28,7 @@ body {
   width: 100%;
   /* border: solid rgb(73, 33, 119) 2px; */
 
-  /* background-image: url(../Images/Background.jpg); */
+  /* background-image: url(../images/Background.jpg); */
   background-size:cover;
   /* background-color: bisque; */
 }
@@ -104,7 +104,7 @@ header {
   height: 20em;
   /* border: solid rgb(191, 29, 206) 2px; */
   margin: -0.5em -10.2em;
-  background-image: url(../Images/image0.png);
+  background-image: url(../images/image0.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   position: relative;

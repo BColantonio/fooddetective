@@ -8,9 +8,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 /* GET search product */
-router.get('/search', function(req, res) {
-  let data = req;
-  let products = async () => {
+router.get('/search', function(req, res, next) {
     req = unirest("GET", "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/products/search");
 
     req.query({
@@ -33,16 +31,20 @@ router.get('/search', function(req, res) {
     });
 
 
-    req.end(function (res) {
+
+
+    req.end(function (resp) {
       if (res.error) throw new Error(res.error);
 
-      console.log(res.body);
+      console.log(resp.body.products);
+      res.render('products', {products: resp.body.products})
+      // next();
+
     });
-    let body = await res.body;
-    return body;
-  };
-   console.log(products());
+}, function() {
+    console.log('test');
 });
+   // console.log(products());
   // req.end(function (res) {
   //     if (res.error) throw new Error(res.error);
   //     products = res.body.products;
