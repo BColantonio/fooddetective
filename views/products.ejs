@@ -9,47 +9,48 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
+<div class="main-container"></div>
+<header>
     <% include ./partials/header.ejs %>
-    <div class="main-container">
-        <table class="table">
-            <thead class="thead-dark">
-            <tr>
-                <th scope="col"></th>
-                <th scope="col"></th>
-            </tr>
-            </thead>
-            <tbody>
-            <% products.forEach( product => { %>
+</header>
+
+
+<div id="LeftBox">
+    <table class="table">
+
+        <tbody>
+        <% products.forEach( product => { %>
             <tr>
                 <%let id=product.id%>
                 <form id="<%= id %>" action="/products/details" enctype="application/x-www-form-urlencoded">
-                <th id="title" scope="row"><a href="#"><%= product.title %></a></th>
+                    <th id="title" scope="row"><a href="#"><%= product.title %></a></th>
                     <td><input type="radio" id="<%=product.id%>" name="id" value="<%=product.id%>"></td>
                     <td><img src="<%= product.image %>"></td>
                     <td><input type="submit" value="GO"></td>
                 </form>
                 <script>
-                    function go(idPass) {
-                        //var form = document.getElementById("<%= id %>");
-                        console.log(idPass)
-                        // document.getElementById(`${idPass}`).addEventListener("click", function (idPass) {
-                        //     console.log(idPass)
+                  function go(idPass) {
+                    //var form = document.getElementById("<%= id %>");
+                    console.log(idPass)
+                    // document.getElementById(`${idPass}`).addEventListener("click", function (idPass) {
+                    //     console.log(idPass)
 
-                            // $.ajax({
-                            //     url: "/products/details",
-                            //     data: {id: idPass}
-                            // })
-                                // .done(function (msg) {
-                                //     window.location.href = './'
-                                // })
-                            // document.getElementbyId(form).submit();
-                        // });
-                    }
+                    // $.ajax({
+                    //     url: "/products/details",
+                    //     data: {id: idPass}
+                    // })
+                    // .done(function (msg) {
+                    //     window.location.href = './'
+                    // })
+                    // document.getElementbyId(form).submit();
+                    // });
+                  }
                 </script>
             </tr>
-            <% }); %>
-            </tbody>
-        </table>
-        <h1>Our Post Page!</h1>
-    </div>
+        <% }); %>
+        </tbody>
+    </table>
+    <h1>Our Post Page!</h1>
+</div>
+</div>
 </body>

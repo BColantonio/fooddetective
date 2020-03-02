@@ -1,36 +1,60 @@
-<div id="logo"><a href="/"><img src="images/image0.png"></a></div>
-<div id="login2">
-    <div class="container bar">
-        <label class="floatLeft" for="navBtn"><span></span></label>
+
+<link rel='stylesheet' href='/stylesheets/style.css' />
+
+<header>
+    <div id="logo">
+
+
     </div>
+
+
     <div id="search">
-        <form id="product-search" action="/search" enctype="application/x-www-form-urlencoded">
-            <input type="text" name="mySearch" id="mySearch">
-            <input type="submit" value="Search">
-        </form>
-        <!-- <script>
-            localStorage.setItem("serialNumber", "abc123def456");
-        </script> -->
+
+
+
+        <section class="searchProperties">
+            <form id="product-search" action="/search" enctype="application/x-www-form-urlencoded">
+                <input type="text" name="mySearch" id="mySearch" placeholder="What are you looking for?">
+                <button>Search</button>
+            </form>
+        </section>
+
+
     </div>
-    <div class="container">
-        <input type="checkbox" class="navBtn" id="navBtn" />
-        <nav>
-            <div class="row">
-                <div class="form-p">
-                    <form action="/signup" method="post">
-                        <div>
-                            <label>Username:</label>
-                            <input type="text" name="username" /><br/>
-                        </div>
-                        <div>
-                            <label>Password:</label>
-                            <input type="password" name="password" />
-                        </div>
-                        <div><input type="submit" value="Sign Up" /></div>
-                    </form>
-                    <p><a href="">Forget your password ?</a></p>
-                </div>
-            </div>
-        </nav>
+
+
+
+    <div id="login2">
+        <div class="container bar">
+            <label class="floatLeft" for="navBtn"><span></span></label>
+        </div>
+        <div class="container">
+            <input type="checkbox" class="navBtn" id="navBtn" />
+            <nav>
+                <div class="row">
+                    <div class="form-p">
+                        <form action="/signup" method="post">
+                            <div>
+                                <label>Username:</label>
+                                <input type="text" name="username" id="login-username" /><br/>
+                            </div>
+                            <div>
+                                <label>Password:</label>
+                                <input type="password" name="password" />
+                            </div>
+                            <div><input type="submit" value="Sign Up" /></div>
+                        </form>
+
+
+            </nav>
+        </div>
+
     </div>
-</div>
+
+
+
+
+
+
+
+</header>
