@@ -1,30 +1,16 @@
-<div id="signupBox">
-<form action="/register" method="post">
-    <div id="username" class="placeholders">
-            <label>Username</label>
-            <input required id="pl_username" type="text" name="username2" maxlength="8" placeholder="Enter your username...">
+<form id="signupBox">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
-    <div id="Fname" class="placeholders" style="margin-top: 20px;">
-        <label id="pl_Fname" for="text" class=""> First Name</label>
-        <input required id="pl_fName" type="Fname" name="firstName" placeholder="Enter your Name...">
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
     </div>
-    <div id="Lname" class="placeholders" style="margin-top: 20px;">
-        <label id="pl_Lname" for="text" class=""> Last Name</label>
-        <input required id="pl_lName" type="Lname" name="lastName" placeholder="Enter your Last Name...">
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
     </div>
-    <div id="email" class="placeholders" style="margin-top: 20px;">
-        <label id="pl_email" for="text" class=""> Email</label>
-        <input required id="pl_email" type="email" name="emailAddress" placeholder="Enter your email...">
-    </div>
-    <div id="password" class="placeholders" style="margin-top: 20px;">
-        <label id="pl_password" for="text" class="">Password</label>
-        <input id="pl_password0" name="password" type="password" pattern="^\\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" placeholder="Password" required>
-    </div>
-    <div id="password" class="placeholders" style="margin-top: 20px;">
-        <label id="pl_password" for="text" class="">Password</label>
-        <input id="pl_password1" name="password_two" type="password" pattern="^\\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" placeholder="Verify Password" required>
-    </div>
-    <br>
-    <div><input type="submit" value="Submit" /></div>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-</div>
