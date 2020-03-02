@@ -9,7 +9,7 @@ let details;
 let products;
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Food Detectives' });
 });
 /* GET search product */
 router.get('/search', function(req, res) {
@@ -72,7 +72,7 @@ router.post('/register', function(req, res) {
     }).then(result => {
         console.log(result)
         if (result.output.returnValue == 1) {
-            res.render('/preferences', {userInfo: {
+            res.render('preferences', {userInfo: {
                     username: username2,
                     password: password,
                     firstName: firstName,
