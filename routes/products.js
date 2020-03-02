@@ -24,7 +24,7 @@ router.get("/details", function(req, res) {
 
             req.end(function (resp) {
                 if (res.error) throw new Error(res.error);
-                console.log(resp.body.title)
+                console.log(resp.body.nutrition.nutrients[0])
                 details += resp.body;
                 res.render('details', {details: resp.body})
 

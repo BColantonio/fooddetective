@@ -43,7 +43,7 @@ router.get('/search', function(req, res) {
         //console.log(resp.body.products);
         // console.log(ids)
         products = resp.body.products;
-        res.render('../products', {products: resp.body.products})
+        res.render('products', {products: resp.body.products})
 
     });
 

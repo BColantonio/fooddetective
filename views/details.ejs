@@ -18,24 +18,28 @@
     </header>
 
     <div id="LeftBox">
-
-
-
-
-        <h1><%=details.title%></h1>
-        <h2>Badges:</h2></br>
-        <%details.badges.forEach(badge => { %>
-            <h1><%= badge %></h1>
-        <%})%>
-        <h2>Other Badges:</h2>
-        <%details.important_badges.forEach(badge => { %>
-            <h1><%= badge %></h1>
-        <%})%>
-        <h2>Nutrition:</h2>
-        <%details.nutrition.nutrients.forEach(nutrient => { %>
-            <h3><%= nutrient %></h3>
-        <%})%>
-        <%details.nutrition.calories%>
+        <tr>
+            <th><h1><%=details.title%></h1></th>
+            <th>Badges</th>
+            <th>Other Badges</th>
+            <th>Nutrition</th>
+        </tr>
+        <tr>
+            <td></td>
+            <%details.badges.forEach(badge => { %>
+                <td><%= badge %></td>
+            <%})%>
+            <%details.important_badges.forEach(impBadge => { %>
+                <td><%= impBadge %></td>
+            <%})%>
+            <%details.nutrition.nutrients.forEach(extract => { %>
+                <td><%= extract.title %>,
+                <%= extract.amount %>,
+                <%= extract.unit %>,
+                <%= extract.percentOfDailyNeeds %></td>
+            <%})%>
+        </tr>
+        <%=details.nutrition_widget%>
         <%details.nutrition.fat%>
         <%details.nutrition.calories%>
         <%details.nutrition.protein%>
