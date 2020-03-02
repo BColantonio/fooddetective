@@ -21,8 +21,18 @@
             <tbody>
             <% products.forEach( product => { %>
             <tr>
-                <th scope="row"><a href="#"><%= product.title %></a></th>
-                <td><img src="<%= product.image %>"></td>
+                <form id="sendId" method="get" action="/details">
+                <th id="title" scope="row"><a href="#"><%= product.title %></a></th>
+                <td><img id="imageClick<%=product.id%>" onclick="<%let id=product.id%>" src="<%= product.image %>"></td>
+                </form>
+                <script>
+                    var form = document.getElementById("sendId");
+
+                    document.getElementById("imageClick<%=id%>").addEventListener("click", function () {
+                        console.log(<%=id%>)
+                        form.submit();
+                    });
+                </script>
             </tr>
             <% }); %>
             </tbody>

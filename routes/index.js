@@ -2,51 +2,31 @@ const _ = require('lodash');
 const express = require('express');
 const router = express.Router();
 const unirest = require('unirest');
-let query;
+let details;
+let products;
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
   res.render('index', { title: 'Express' });
 });
 /* GET search product */
-router.get('/search', function(req, res, next) {
-    let getBasicSearch = async (req, res, next) => {
-        let search = req.query.mySearch;
-        req = unirest("GET", "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/products/search");
+router.get('/search', function(req, res) {
 
-        req.query({
-            "offset": "0",
-            "number": "10",
-            "maxCalories": "5000",
-            "minProtein": "0",
-            "maxProtein": "100",
-            "minFat": "0",
-            "maxFat": "100",
-            "minCarbs": "0",
-            "maxCarbs": "100",
-            "minCalories": "0",
-            "query": search
-        });
+    let search = req.query.mySearch;
+    req = unirest("GET", "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/products/search");
 
-        req.headers({
-            "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-            "x-rapidapi-key": "7X0MNUFnWRmshxYgMbgWqlOFnZwcp1lyo5tjsnGS7k2WclVBNw"
-        });
-
-
-        await req.end(function (resp) {
-            if (res.error) throw new Error(res.error);
-
-            //console.log(resp.body.products);
-            res.render('products', {products: resp.body.products})
-            next();
-
-        });
-    }
-    getBasicSearch(req, res, next);
-}, function() {
-    var unirest = require("unirest");
-
-    var req = unirest("GET", "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/products/22347");
+    req.query({
+        "offset": "0",
+        "number": "10",
+        "maxCalories": "5000",
+        "minProtein": "0",
+        "maxProtein": "100",
+        "minFat": "0",
+        "maxFat": "100",
+        "minCarbs": "0",
+        "maxCarbs": "100",
+        "minCalories": "0",
+        "query": search
+    });
 
     req.headers({
         "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
@@ -54,13 +34,41 @@ router.get('/search', function(req, res, next) {
     });
 
 
-    req.end(function (res) {
+    req.end(function (resp) {
         if (res.error) throw new Error(res.error);
 
-        console.log(res.body);
+        //console.log(resp.body.products);
+        // console.log(ids)
+        products = resp.body.products;
+        res.render('products', {products: resp.body.products})
+
     });
 
+
 });
+router.get("/details", function(req, res) {
+
+            let unirest = require("unirest");
+
+            req = unirest("GET", `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/products/${product.id}`);
+
+            req.headers({
+                "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+                "x-rapidapi-key": "7X0MNUFnWRmshxYgMbgWqlOFnZwcp1lyo5tjsnGS7k2WclVBNw"
+            });
+
+
+            req.end(function (res) {
+                if (res.error) throw new Error(res.error);
+
+                details += res.body;
+                res.render({details: res.body})
+
+                console.log(res.body);
+            });
+
+});
+
    // console.log(products());
   // req.end(function (res) {
   //     if (res.error) throw new Error(res.error);
