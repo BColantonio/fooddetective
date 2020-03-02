@@ -22,20 +22,23 @@
             <% products.forEach( product => { %>
             <tr>
                 <%let id=product.id%>
+                <form id="<%= id %>" action="/products/details" enctype="application/x-www-form-urlencoded">
                 <th id="title" scope="row"><a href="#"><%= product.title %></a></th>
-                <td><img id="<%=product.id%>" onclick="go(id)" name="itemId" src="<%= product.image %>"></td>
+                    <td><input type="radio" id="<%=product.id%>" name="id" value="<%=product.id%>"></td>
+                    <td><img src="<%= product.image %>"></td>
+                    <td><input type="submit" value="GO"></td>
+                </form>
                 <script>
                     function go(idPass) {
-                        <!--var form = document.getElementById("sendId<%= id %>");-->
+                        //var form = document.getElementById("<%= id %>");
                         console.log(idPass)
                         // document.getElementById(`${idPass}`).addEventListener("click", function (idPass) {
                         //     console.log(idPass)
 
-                            $.ajax({
-                                url: "/products/details",
-                                data: {id: idPass}
-                            })
-
+                            // $.ajax({
+                            //     url: "/products/details",
+                            //     data: {id: idPass}
+                            // })
                                 // .done(function (msg) {
                                 //     window.location.href = './'
                                 // })
