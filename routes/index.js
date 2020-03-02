@@ -2,6 +2,9 @@ const _ = require('lodash');
 const express = require('express');
 const router = express.Router();
 const unirest = require('unirest');
+const sql = require('mssql');
+var db = require('../db');
+
 let details;
 let products;
 /* GET home page. */
@@ -40,12 +43,53 @@ router.get('/search', function(req, res) {
         //console.log(resp.body.products);
         // console.log(ids)
         products = resp.body.products;
-        res.render('products', {products: resp.body.products})
+        res.render('../products', {products: resp.body.products})
 
     });
 
 
 });
+
+router.post('/register', function(req, res) {
+    console.log(req.body)
+    var results;
+    var username2 = req.body.username;
+    var password = req.body.password0;
+    var firstName = req.body.firstName;
+    var lastName = req.body.lastName;
+    var emailAddress = req.body.email;
+    console.log(req.body.firstName)
+    // var password = req.body.password;
+    sql.connect(db).then(pool => {
+        return pool.request()
+            .input('username', sql.VarChar(30), username2)
+            .input('password', sql.VarChar(30), password)
+            .input('firstName', sql.VarChar(30), firstName)
+            .input('lastName', sql.VarChar(30), lastName)
+            .input('emailAddress', sql.VarChar(30), emailAddress)
+            .output('returnValue', sql.VarChar(50))
+            .execute('usp_Users_CreateNewUser')
+    }).then(result => {
+        console.log(result)
+        if (result.output.returnValue == 1) {
+            res.render('/preferences', {userInfo: {
+                    username: username2,
+                    password: password,
+                    firstName: firstName,
+                    lastName: lastName,
+                    email: emailAddress
+                }
+            });
+        } else {
+            console.log('error')
+        }
+    }).catch(err => {
+        console.log(err)
+    })
+
+});
+
+module.exports = router;
 // router.get("/details", function(req, res) {
 //
 //     let searchId = req.query.id;

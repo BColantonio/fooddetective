@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+    <script src="/scripts/index.js"></script>
+</head>
+<body>
+<% include ./partials/header %>
+<div id="MainBody">
+    <div id="LeftBox">
+        <div id="content">
+            <p>Whether it be allergies, dietary restrictions, or ethical standards, its fair to assume that most of us have other activities we prefer over standing around in grocery stores and reading product labels. Food Detective is designed to quickly and easily provide all the information you will need to maintain your dietary lifestyle. Our time is valuable. Let’s take it back! </p>
+        </div>
+    </div>
+    <div id="rightBox">
+        <div>
+            <h1 id="main-title">Sign Up</h1>
+            <p id="subtitle">It only takes a minute!</p>
+        </div>
+<form id="signupBox" action="/savePref" method="post">
+    <label>Username</label>
+    <input type="text" name="username" class="form-control" aria-describedby="emailHelp" value="<%=userInfo.firstName%>">
+    <label>Password</label>
+    <input type="password" name="password0" class="form-control">
+    <label>First Name</label>
+    <input type="text" name="firstName" class="form-control">
+    <label>Last Name</label>
+    <input type="text" name="lastName" class="form-control">
+    <label for="exampleInputEmail1">Email Address</label>
+    <input type="email" name="email" class="form-control" aria-describedby="emailHelp">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <input type="checkbox" id="diet0" name="vegetarian" value="vegetarian">
+    <label for="diet0">Vegetarian</label><br>
+    <input type="checkbox" id="diet1" name="vegan" value="vegan">
+    <label for="diet1">Vegan</label><br>
+    <input type="checkbox" id="diet2" name="gluten-free" value="gluten-free">
+    <label for="diet2">glutenFree</label><br>
+    <input type="submit" value="Submit">
+</form>
+    </div>
+</div>
+</body>
+</html>
