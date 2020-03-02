@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
 });
 /* GET search product */
 router.get('/search', function(req, res, next) {
+    let search = req.query.mySearch;
     req = unirest("GET", "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/products/search");
 
     req.query({
@@ -22,7 +23,7 @@ router.get('/search', function(req, res, next) {
       "minCarbs": "0",
       "maxCarbs": "100",
       "minCalories": "0",
-      "query": "snickers"
+      "query": search
     });
 
     req.headers({
@@ -36,7 +37,7 @@ router.get('/search', function(req, res, next) {
     req.end(function (resp) {
       if (res.error) throw new Error(res.error);
 
-      console.log(resp.body.products);
+      //console.log(resp.body.products);
       res.render('products', {products: resp.body.products})
       // next();
 
