@@ -21,17 +21,27 @@
             <tbody>
             <% products.forEach( product => { %>
             <tr>
-                <form id="sendId" method="get" action="/details">
+                <%let id=product.id%>
                 <th id="title" scope="row"><a href="#"><%= product.title %></a></th>
-                <td><img id="imageClick<%=product.id%>" onclick="<%let id=product.id%>" src="<%= product.image %>"></td>
-                </form>
+                <td><img id="<%=product.id%>" onclick="go(id)" name="itemId" src="<%= product.image %>"></td>
                 <script>
-                    var form = document.getElementById("sendId");
+                    function go(idPass) {
+                        <!--var form = document.getElementById("sendId<%= id %>");-->
+                        console.log(idPass)
+                        // document.getElementById(`${idPass}`).addEventListener("click", function (idPass) {
+                        //     console.log(idPass)
 
-                    document.getElementById("imageClick<%=id%>").addEventListener("click", function () {
-                        console.log(<%=id%>)
-                        form.submit();
-                    });
+                            $.ajax({
+                                url: "/products/details",
+                                data: {id: idPass}
+                            })
+
+                                // .done(function (msg) {
+                                //     window.location.href = './'
+                                // })
+                            // document.getElementbyId(form).submit();
+                        // });
+                    }
                 </script>
             </tr>
             <% }); %>

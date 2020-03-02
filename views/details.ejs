@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        <script
+                src="https://code.jquery.com/jquery-3.4.1.min.js"
+                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+                crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <% include ./partials/header.ejs %>
+        <div class="main-container">
+            <h1><%=details.title%></h1>
+            <h2>Badges:</h2></br>
+            <%details.badges.forEach(badge => { %>
+            <h1><%= badge %></h1>
+            <%})%>
+            <h2>Other Badges:</h2>
+            <%details.important_badges.forEach(badge => { %>
+                <h1><%= badge %></h1>
+            <%})%>
+            <h2>Nutrition:</h2>
+            <%details.nutrition.nutrients.forEach(nutrient => { %>
+                <h3><%= nutrient %></h3>
+            <%})%>
+            <h2>Caloric Breakdown:</h2>
+            <%details.nutrition.caloricBreakdown.forEach(breakdown => { %>
+                <h3><%= breakdown %></h3>
+            <%})%>
+            <%details.nutrition.calories%>
+            <%details.nutrition.fat%>
+            <%details.nutrition.calories%>
+            <%details.nutrition.protein%>
+            <%details.nutrition.carbs%>
+            <%details.serving_size%>
+            <%details.number_of_servings%>
+            <%details.description%>
+            <%details.images.forEach(image => { %>
+                <img src="<%= image %>">
+            <%})%>
+
+
+
+
+
+
+
+        </div>
+    </body>
+</html>

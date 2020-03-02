@@ -46,28 +46,29 @@ router.get('/search', function(req, res) {
 
 
 });
-router.get("/details", function(req, res) {
-
-            let unirest = require("unirest");
-
-            req = unirest("GET", `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/products/${product.id}`);
-
-            req.headers({
-                "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-                "x-rapidapi-key": "7X0MNUFnWRmshxYgMbgWqlOFnZwcp1lyo5tjsnGS7k2WclVBNw"
-            });
-
-
-            req.end(function (res) {
-                if (res.error) throw new Error(res.error);
-
-                details += res.body;
-                res.render({details: res.body})
-
-                console.log(res.body);
-            });
-
-});
+// router.get("/details", function(req, res) {
+//
+//     let searchId = req.query.id;
+//             let unirest = require("unirest");
+//
+//             req = unirest("GET", `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/products/${searchId}`);
+//
+//             req.headers({
+//                 "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+//                 "x-rapidapi-key": "7X0MNUFnWRmshxYgMbgWqlOFnZwcp1lyo5tjsnGS7k2WclVBNw"
+//             });
+//
+//
+//             req.end(function (resp) {
+//                 if (res.error) throw new Error(res.error);
+//
+//                 details += resp.body;
+//                 res.render('products', {details: resp.body})
+//
+//                 console.log(resp.body);
+//             });
+//
+// });
 
    // console.log(products());
   // req.end(function (res) {
