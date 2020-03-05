@@ -22,9 +22,9 @@
         <% products.forEach( product => { %>
             <tr>
                 <%let id=product.id%>
-                <form id="<%= id %>" action="/products/details" enctype="application/x-www-form-urlencoded">
+                <form id="<%= id %>" action="/api/advancedSearch" enctype="application/x-www-form-urlencoded">
                     <th id="title" scope="row"><a href="#"><%= product.title %></a></th>
-                    <td><input type="radio" id="<%=product.id%>" name="id" value="<%=product.id%>"></td>
+                    <td><input type="radio" id="<%=product.id%>" name="productId" value="<%=product.id%>"></td>
                     <td><img src="<%= product.image %>"></td>
                     <td><input type="submit" value="GO"></td>
                 </form>

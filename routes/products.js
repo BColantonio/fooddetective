@@ -7,7 +7,7 @@ let products;
 /* GET home page. */
 
 
-router.get("/details", function(req, res) {
+router.get("/", function(req, res) {
     //console.log(req)
 
     let searchId = req.query.id
