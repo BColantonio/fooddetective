@@ -17,7 +17,11 @@ const basicSearch = (product, response) => {
 
         if (response.error || apiResponse.error) throw new Error (response.error);
         let products = await apiResponse.body.products;
-        return response.render('products', {products: products})
+        return response.render('products',
+            {
+                products: products,
+                title: 'Food Detectives'
+            })
     })
 
 };
@@ -32,7 +36,11 @@ const advancedSearch = (productId, response) => {
 
         if (response.error || apiResponse.error) throw new Error (response.error);
         let details = await apiResponse.body;
-        return response.render('details', {details: details})
+        return response.render('details',
+            {
+                details: details,
+                title: 'Food Detectives'
+            })
     })
 }
 

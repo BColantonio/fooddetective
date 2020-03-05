@@ -4,50 +4,14 @@ const router = express.Router();
 const unirest = require('unirest');
 const sql = require('mssql');
 var db = require('../db');
+router.use(express.static('public'));
+
 
 let details;
 let products;
 /* GET home page. */
 router.get('/', function(req, res) {
   res.render('index', { title: 'Food Detectives' });
-});
-/* GET search product */
-router.get('/search', function(req, res) {
-
-    let search = req.query.mySearch;
-    req = unirest("GET", "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/products/search");
-
-    req.query({
-        "offset": "0",
-        "number": "10",
-        "maxCalories": "5000",
-        "minProtein": "0",
-        "maxProtein": "100",
-        "minFat": "0",
-        "maxFat": "100",
-        "minCarbs": "0",
-        "maxCarbs": "100",
-        "minCalories": "0",
-        "query": search
-    });
-
-    req.headers({
-        "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-        "x-rapidapi-key": "7X0MNUFnWRmshxYgMbgWqlOFnZwcp1lyo5tjsnGS7k2WclVBNw"
-    });
-
-
-    req.end(function (resp) {
-        if (res.error) throw new Error(res.error);
-
-        //console.log(resp.body.products);
-        // console.log(ids)
-        products = resp.body.products;
-        res.render('products', {products: resp.body.products})
-
-    });
-
-
 });
 
 router.post('/register', function(req, res) {

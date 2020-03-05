@@ -2,6 +2,8 @@ const _ = require('lodash');
 const express = require('express');
 const router = express.Router();
 const unirest = require('unirest');
+router.use(express.static('public'));
+
 let details;
 let products;
 /* GET home page. */
