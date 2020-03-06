@@ -2,7 +2,6 @@ const _ = require('lodash');
 const api = require('../api')
 const express = require('express');
 const router = express.Router();
-router.use(express.static('public'));
 
 
 /* GET home page. */

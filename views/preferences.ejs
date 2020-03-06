@@ -8,7 +8,7 @@
             src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
             crossorigin="anonymous"></script>
-    <script src="preferences.js"></script>
+    <script src="/scripts/preferences.js"></script>
     <link rel="icon"
           type="image/png"
           href="images/favicon.png">
@@ -36,13 +36,13 @@
                 <input type="email" name="email" class="form-control" aria-describedby="emailHelp"value="<%=userInfo.email%>">
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 <p id="more1" style="color: coral; font-weight: bold">The dietary preferences you choose will be used to filter your search results</p>
-                <input type="checkbox" id="diet0" name="vegetarian" value="vegetarian">
+                <input type="radio" id="diet0" name="diet" value="vegetarian">
                 <label for="diet0">Vegetarian</label><br>
-                <input type="checkbox" id="diet1" name="vegan" value="vegan">
+                <input type="radio" id="diet1" name="diet" value="vegan">
                 <label for="diet1">Vegan</label><br>
-                <input type="checkbox" id="diet2" name="gluten-free" value="gluten-free">
+                <input type="radio" id="diet2" name="diet" value="gluten-free">
                 <label for="diet2">glutenFree</label><br>
-                <input type="submit" value="Submit">
+                <input id="submitBtn" type="submit" value="Submit">
             </form>
         </div>
     </div>

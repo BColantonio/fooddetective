@@ -2,7 +2,6 @@ const _ = require('lodash');
 const express = require('express');
 const router = express.Router();
 const unirest = require('unirest');
-router.use('public', express.static(__dirname + '../'));
 
 let details;
 let products;

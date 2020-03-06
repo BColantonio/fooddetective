@@ -1,10 +1,15 @@
 const cookieParser = require('cookie-parser');
 const createError = require('http-errors');
 const express = require('express');
-const path = require('path');
 const logger = require('morgan');
+const NODE_ENV = 'development';
+const IN_PROD = NODE_ENV === 'production';
+const path = require('path');
+const session = require('express-session');
+const SESS_NAME = 'sid';
+const SESS_SECRET = 'asdf';
 let apiRouter = require('./routes/api');
-let dbRouter = require('./routes/db');
+let dbsRouter = require('./routes/db');
 let indexRouter = require('./routes/index');
 let productsRouter = require('./routes/products');
 var usersRouter = require('./routes/users');
@@ -19,10 +24,20 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static('public'));
-
+app.use(express.static('./public'));
+app.use(session({
+  name: SESS_NAME,
+  resave: false,
+  saveUninitialized: false,
+  secret: SESS_SECRET,
+  cookie: {
+    maxAge: 900000,
+    sameSite: true,
+    secure: IN_PROD
+  }
+}));
 app.use('/api', apiRouter);
-app.use('/db', dbRouter);
+app.use('/db', dbsRouter);
 app.use('/', indexRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);

@@ -4,10 +4,9 @@ const router = express.Router();
 const unirest = require('unirest');
 const sql = require('mssql');
 var db = require('../db');
-
-
 let details;
 let products;
+// router.use('/public', express.static('./'))
 /* GET home page. */
 router.get('/', function(req, res) {
   res.render('index', { title: 'Food Detectives' });
