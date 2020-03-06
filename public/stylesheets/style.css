@@ -15,7 +15,7 @@ body {
   min-height: 100vh;
 } */
 
-#content {
+/* #content {
   width: 100%;
   font-family: sans-serif;
   padding: 0 20px;
@@ -23,24 +23,16 @@ body {
   margin-top: 3em;
   line-height: 45px;
   text-align: justify;
-}
+} */
 
 #page>tr {
   display: inline-flex;
   justify-content: center;
 }
 
-#main-container {
-  width: 100%;
-  /* border: solid rgb(73, 33, 119) 2px; */
-  /* background-image: url(../images/Background.jpg); */
-  background-size: cover;
-  /* background-color: bisque; */
-}
 
-#signupBox {
-  padding: 1.5em;
-}
+
+
 
 header {
   width: 100%;
@@ -62,18 +54,26 @@ header {
   width: 40%;
   background: rgba(255, 255, 255, 0.692);
   border-radius: 25px;
-  height: 800px;
+
   margin-left: 100px;
 }
 
-#form-p {
+#LeftBox2 {
+  min-width: 30%;
+  width: 60%;
   background: rgba(255, 255, 255, 0.692);
+  border-radius: 25px;
+  margin-left: 100px;
+  text-align: center;
 }
 
+
+
 #rightBox {
+  float: right;
   min-width: 40%;
   width: 45%;
-  height: 800px;
+
   /* border: solid rgb(191, 29, 206) 2px; */
   background: rgba(255, 255, 255, 0.692);
   border-radius: 25px;
@@ -126,9 +126,9 @@ header {
   position: relative;
 }
 
-#search form input {
-  width: 80%;
-}
+/*#search form input {*/
+/*  width: 80%;*/
+/*}*/
 
 footer {
   text-align: center;
@@ -147,9 +147,9 @@ footer {
   /* border: solid rgb(191, 29, 206) 2px; */
   margin-top: 25px;
   margin-left: 10px;
-  background-image: url('../images/image0.png');
+  background-image: url(../images/image0.png);
   background-size: 100% 100%;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   position: relative;
 }
 
@@ -171,9 +171,9 @@ footer {
   color: rgb(70, 70, 70);
 }
 
-#product-search {
-  display: inline-flex;
-  justify-content: start;
+form {
+  /* border: 2px red solid; */
+  padding: 20px 40px 20px 40px;
 }
 
 .placeholders input {
@@ -194,7 +194,7 @@ footer {
   margin: auto;
   text-align: center;
   padding: 10px 30px 10px 30px;
-  border: 1px solid rgb(245, 136, 40);
+  border: 1px solid rgb(245,136,40);
   background-color: white;
   border-radius: 3px;
   cursor: pointer;
@@ -242,7 +242,7 @@ footer {
   height: 40px;
   margin: 0;
   padding: 0 10px;
-  width: 70%;
+  width: 75%;
 }
 
 .ie .searchProperties input {
@@ -462,18 +462,18 @@ nav ul li:hover a {
 #nutritionfacts {
   background-color: white;
   border: 1px solid black;
-  padding: 3px;
-  width: 90%;
-  height: 700px;
-  margin-left: 25px;
+  width: 100%;
+
+
   margin-top: 25px;
 }
 
 #nutritionfacts td {
   color: black;
   font-family: 'Arial Black', 'Helvetica Bold', sans-serif;
-  font-size: 15pt;
+  font-size: 13pt;
   padding: 0;
+  width: 100%;
 }
 
 #nutritionfacts td.header {
@@ -484,7 +484,7 @@ nav ul li:hover a {
 
 #nutritionfacts div.label {
   float: left;
-  font-family: 'Arial Black', 'Helvetica Bold', sans-serif;
+
 }
 
 #nutritionfacts div.serving {
@@ -496,23 +496,29 @@ nav ul li:hover a {
 #nutritionfacts div.weight {
   display: inline;
   font-family: Arial, Helvetica, sans-serif;
-  padding-left: 1px;
+
 }
 
 #nutritionfacts div.dv {
   display: inline;
   float: right;
-  font-family: 'Arial Black', 'Helvetica Bold', sans-serif;
+
 }
 
 #nutritionfacts table.vitamins td {
   font-family: Arial, Helvetica, sans-serif;
   white-space: nowrap;
-  width: 33%;
+  width: 100%;
 }
 
 #nutritionfacts div.line {
   border-top: 1px solid black;
+}
+#testline{
+
+  border-top: 1px solid black;
+  width: 100%;
+
 }
 
 #nutritionfacts div.labellight {

@@ -1,14 +1,41 @@
-<form id="signupBox" action="/register" method="post">
-        <label>Username</label>
-        <input type="text" name="username" class="form-control" aria-describedby="emailHelp">
-        <label>Password</label>
-        <input type="password" name="password0" class="form-control">
-        <label>First Name</label>
-        <input type="text" name="firstName" class="form-control">
-        <label>Last Name</label>
-        <input type="text" name="lastName" class="form-control">
-        <label for="exampleInputEmail1">Email Address</label>
-        <input type="email" name="email" class="form-control" aria-describedby="emailHelp">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    <input type="submit" value="Submit">
-</form>
+<h1 id="main-title">Sign Up</h1>
+                <p id="subtitle">It only takes a minute!</p>
+                <form action="/register" method="post">
+
+
+                    <div id="username" class="placeholders">
+                        <label id="pl_Fname" for="text" class> Username</label>
+                        <input required id="pl_username" type="text" name="username2" maxlength="8" placeholder="Enter your username...">
+                    </div>
+
+                    <div id="Fname" class="placeholders " style="margin-top: 20px;">
+                        <label id="pl_Fname" for="text" class> First Name</label>
+                        <input required id="pl_Fname" type="Fname" name="firstName" placeholder="Enter your Name...">
+                    </div>
+
+                    <div id="Lname" class="placeholders " style="margin-top: 20px;">
+                        <label id="pl_Lname" for="text" class> Last Name</label>
+                        <input required id="pl_Lname" type="Lname" name="lastName" placeholder="Enter your Last Name...">
+                    </div>
+
+                    <div id="email" class="placeholders " style="margin-top: 20px;">
+                        <label id="pl_email" for="text" class> Email</label>
+                        <input required id="pl_email" type="email" name="emailAddress" placeholder="Enter your email...">
+                    </div>
+
+                    <div id="password" class="placeholders" style="margin-top: 20px;">
+                        <label id="pl_password" for="text" class="">Password</label>
+                        <input id="password" name="password" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" placeholder="Password"
+                            required>
+                    </div>
+                    <div id="password" class="placeholders" style="margin-top: 20px;">
+                        <label id="pl_password" for="text" class="">Password</label>
+                        <input id="password_two" name="password_two" type="password" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" placeholder="Verify Password" required>
+                    </div>
+
+
+                    <br>
+
+                    <div><input type="submit" value="register" /></div>
+
+                </form>
