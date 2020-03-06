@@ -23,34 +23,9 @@
 
 
     </div>
-
-
-
-    <div id="login2">
-        <div class="container bar">
-            <label class="floatLeft" for="navBtn"><span></span></label>
-        </div>
-        <div class="container">
-            <input type="checkbox" class="navBtn" id="navBtn" />
-            <nav>
-                <div class="row">
-                    <div class="form-p">
-                        <form action="/signup" method="post">
-                            <div>
-                                <label>Username:</label>
-                                <input type="text" name="username2" /><br/>
-                            </div>
-                            <div>
-                                <label>Password:</label>
-                                <input type="password" name="password" />
-                            </div>
-                            <div><input type="submit" value="Sign Up" /></div>
-                        </form>
-
-
-            </nav>
-        </div>
-
-    </div>
-
+    <% if (typeof userId === 'undefined') { %>
+    <% include ./login.ejs %>
+    <% } else { %>
+    <% include ./menuContent.ejs %>
+    <% } %>
 </header>

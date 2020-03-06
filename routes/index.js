@@ -6,10 +6,27 @@ const sql = require('mssql');
 var db = require('../db');
 let details;
 let products;
+let userId;
 // router.use('/public', express.static('./'))
 /* GET home page. */
-router.get('/', function(req, res) {
-  res.render('index', { title: 'Food Detectives' });
+// router.get('/', function(req, res) {
+//   res.render('index', { title: 'Food Detectives' });
+// });
+
+router.get('/', (request, response) => {
+  if (request.session) {
+   userId = request.session;
+  }
+  if (!_.isUndefined(userId)) {
+    response.render('index.ejs', {
+      userId: userId,
+      title: "Food Detectives"
+    });
+  } else {
+    response.render('index', {
+      title: "Food Detectives"
+    });
+  }
 });
 
 // router.get("/details", function(req, res) {
