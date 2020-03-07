@@ -10,6 +10,7 @@ const IN_PROD = NODE_ENV === 'production';
 const SESS_NAME = 'sid';
 const SESS_SECRET = ' asdf ';
 const sql = require('mssql');
+var MssqlStore = require('mssql-session-store')(session);
 // const users = [
 //     { id: 1, name: 'John', email: 'john@gmail.com', password: '1234' },
 //     { id: 2, name: 'Sam', email: 'sam@gmail.com', password: '1234' },
@@ -18,18 +19,21 @@ const sql = require('mssql');
 //
 router.use(bodyParser.urlencoded({
     extended: true
-}))
-router.use(session({        // TODO: look into session store
-    name: SESS_NAME,
-    resave: false,                  // rolling: Force a session identifier cookie to be set on every response.
-    saveUninitialized: false,       //          The expiration is reset to the original maxAge, resetting the expiration
-    secret: SESS_SECRET,            //          countdown.          The default value is: false.
-    cookie: {                       // NOTE:    When this option is set to: true; but the <saveUninitialized> option is set
-        maxAge: 900000,             //          to: false, the cookie will not be set on a response with an uninitialized session.
-        sameSite: true,             //          It only makes sense to issue a cookie if user is authenticated. If you are not authenticated
-        secure: IN_PROD             //          there is no id to issue
-    }
-}));                                // store:   DB implementation for session stores. When this isn't provided, default: is :in-memory: store.
+}));
+sql.connect(db.config, function(err) {
+    if (err) return callback(err);
+    router.use(session({        // TODO: look into session store
+        name: SESS_NAME,
+        store: new MssqlStore({reapInterval: 10, ttl: 10}),
+        resave: false,                  // rolling: Force a session identifier cookie to be set on every response.
+        saveUninitialized: false,       //          The expiration is reset to the original maxAge, resetting the expiration
+        secret: SESS_SECRET,            //          countdown.          The default value is: false.
+        cookie: {                       // NOTE:    When this option is set to: true; but the <saveUninitialized> option is set
+            maxAge: 900000,               //          to: false, the cookie will not be set on a response with an uninitialized session.
+            sameSite: true,               //          It only makes sense to issue a cookie if user is authenticated. If you are not authenticated
+            secure: IN_PROD               //          there is no id to issue
+        }
+    }));                               // store:   DB implementation for session stores. When this isn't provided, default: is :in-memory: store.
 //                                     // unset:   allows for session var access through the request object for every connection to the server
 //                                     // destroy: useful for when user logs out.
 //                                     // regenerate:
@@ -41,23 +45,23 @@ router.use(session({        // TODO: look into session store
 //     }
 // };
 //
-const redirectHome = (request, response, next) => {
-    if (request.session.userId) {
-        response.redirect('/home')
-    } else {
-        next()
-    }
-};
-//
-router.use((request, response, next) => {
-    const {userId} = request.session;
-    if (userId) {
-        request.locals.user = users.find(
-            user => user.id === userId
-        )
-    }
-    next()
-});
+//     const redirectHome = (request, response, next) => {
+//         if (request.session.userId) {
+//             response.redirect('/home')
+//         } else {
+//             next()
+//         }
+//     };
+// //
+//     router.use((request, response, next) => {
+//         const {userId} = request.session;
+//         if (userId) {
+//             request.locals.user = users.find(
+//               user => user.id === userId
+//             )
+//         }
+//         next()
+//     });
 // router.get('/', (request, response) => {
 //     const { userId } = req.session;
 //     res.send(`
@@ -119,27 +123,31 @@ router.use((request, response, next) => {
 //     `)
 // });
 //
-router.post('/login', redirectHome, (request, response) => {
-    const { username, password } = request.body;
+    router.post('/login', /*redirectHome,*/ (request, response) => {
+        const {username, password} = request.body;
+        console.log('userpass', username+password);
+        console.log((typeof(username && password)));
 
 
-    if (username && password) {    //TODO: validation
-        request.session.userID = db.userLogin(request, response, username, password);
-        console.log('sessionId', request.session.userID)
-        // if (!_.isUndefined(results.recordset[0].userID)) {
-            //response.redirect('/preferences');
-        //     console.log('DEFINED', results.recordset[0].userID)
-        // }
-        // const user = users.find(
-        //     user => user.email === email && user.password === password  //TODO: COMPARE AND HASH
-    }                                                                         // Search: npm-decrypt
-    // if (user) {
+
+        if (username && password) {    //TODO: validation
+            let userId = async () => {
+                await db.userLogin(request, response, username, password);
+            };
+            console.log('why isnt preferences rendering', userId)
+            if (!_.isUndefined(userId)) {
+                response.render('index', {userId: userId});
+            }
+            //TODO: COMPARE AND HASH
+        }                                                                         // Search: npm-decrypt
+        // if (user) {
         //     req.session.userId = user.id
         //     return res.redirect('/home')
         // }
-    // }
-    //
-    // res.redirect('/login')
+        // }
+        //
+        // res.redirect('/login')
+    });
 });
 //
 // router.post('/register', redirectHome, (request, response) => {

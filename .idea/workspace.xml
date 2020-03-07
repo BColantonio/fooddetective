@@ -5,9 +5,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/db.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partials/header.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/header.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,10 +249,10 @@
     <state x="319" y="210" key="com.intellij.ide.util.TipDialog/0.23.1280.709@0.23.1280.709" timestamp="1583185454448" />
     <state x="640" y="385" key="com.intellij.ide.util.TipDialog/67.27.2491.1261@67.27.2491.1261" timestamp="1583455511332" />
     <state x="640" y="428" key="com.intellij.ide.util.TipDialog/67.27.2493.1413@67.27.2493.1413" timestamp="1583100267060" />
-    <state x="183" y="39" width="819" height="622" key="find.popup" timestamp="1583556819713">
+    <state x="183" y="39" width="819" height="622" key="find.popup" timestamp="1583559225030">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="183" y="39" width="819" height="622" key="find.popup/0.0.1280.800@0.0.1280.800" timestamp="1583556819713" />
+    <state x="183" y="39" width="819" height="622" key="find.popup/0.0.1280.800@0.0.1280.800" timestamp="1583559225030" />
     <state x="0" y="182" width="818" height="550" key="find.popup/0.23.1280.709@0.23.1280.709" timestamp="1583188931519" />
     <state x="423" y="89" width="1593" height="979" key="find.popup/67.27.2491.1261@67.27.2491.1261" timestamp="1583520552051" />
     <state x="772" y="337" width="1594" height="1097" key="find.popup/67.27.2493.1413@67.27.2493.1413" timestamp="1583105403739" />

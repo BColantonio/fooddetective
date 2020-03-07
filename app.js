@@ -72,7 +72,7 @@ sql.connect(db.config, function(err) {
       next()
     }
   };
-//
+  //
 //   app.use((request, response, next) => {
 //     const {userId} = request.session;
 //     if (userId) {
