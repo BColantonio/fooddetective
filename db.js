@@ -28,3 +28,4 @@ userLogin = (request, response, username, password) => {
 }
 
 exports.userLogin = userLogin;
+exports.config = config;

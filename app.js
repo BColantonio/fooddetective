@@ -1,14 +1,17 @@
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const createError = require('http-errors');
+const db = require('./db');
 const express = require('express');
 const logger = require('morgan');
 const NODE_ENV = 'development';
 const IN_PROD = NODE_ENV === 'production';
 const path = require('path');
 const session = require('express-session');
+const sql = require('mssql');
 const SESS_NAME = 'sid';
 const SESS_SECRET = 'asdf';
+var MssqlStore = require('mssql-session-store')(session);
 let apiRouter = require('./routes/api');
 let dbRouter = require('./routes/db');
 let indexRouter = require('./routes/index');
@@ -20,7 +23,6 @@ const app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -31,62 +33,70 @@ app.use('/db', dbRouter);
 app.use('/', indexRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);
-
-// const users = [
-//   { id: 1, name: 'John', email: 'john@gmail.com', password: '1234' },
-//   { id: 2, name: 'Sam', email: 'sam@gmail.com', password: '1234' },
-//   { id: 3, name: 'Bill', email: 'bill@gmail.com', password: '1234' }
-// ];
 //
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 //
-app.use(session({        // TODO: look into session store
-  name: SESS_NAME,
-  resave: false,                  // rolling: Force a session identifier cookie to be set on every response.
-  saveUninitialized: false,       //          The expiration is reset to the original maxAge, resetting the expiration
-  secret: SESS_SECRET,            //          countdown.          The default value is: false.
-  cookie: {                       // NOTE:    When this option is set to: true; but the <saveUninitialized> option is set
-    maxAge: 900000,               //          to: false, the cookie will not be set on a response with an uninitialized session.
-    sameSite: true,               //          It only makes sense to issue a cookie if user is authenticated. If you are not authenticated
-    secure: IN_PROD               //          there is no id to issue
-  }
-}));                                // store:   DB implementation for session stores. When this isn't provided, default: is :in-memory: store.
+sql.connect(db.config, function(err) {
+  if (err) return callback(err);
+  app.use(session({        // TODO: look into session store
+    name: SESS_NAME,
+    store: new MssqlStore({reapInterval: 10, ttl: 10}),
+    resave: false,                  // rolling: Force a session identifier cookie to be set on every response.
+    saveUninitialized: false,       //          The expiration is reset to the original maxAge, resetting the expiration
+    secret: SESS_SECRET,            //          countdown.          The default value is: false.
+    cookie: {                       // NOTE:    When this option is set to: true; but the <saveUninitialized> option is set
+      maxAge: 900000,               //          to: false, the cookie will not be set on a response with an uninitialized session.
+      sameSite: true,               //          It only makes sense to issue a cookie if user is authenticated. If you are not authenticated
+      secure: IN_PROD               //          there is no id to issue
+    }
+  }));
+
+// store:   DB implementation for session stores. When this isn't provided, default: is :in-memory: store.
 //                                     // unset:   allows for session var access through the request object for every connection to the server
 //                                     // destroy: useful for when user logs out.
 //                                     // regenerate:
-const redirectLogin = (request, response, next) => {
-  if (!request.session.userId) {
-    response.redirect('/login')
-  } else {
-    next()
-  }
-};
+  const redirectLogin = (request, response, next) => {
+    if (!request.session.userId) {
+      response.redirect('/login')
+    } else {
+      next()
+    }
+  };
 //
-const redirectHome = (request, response, next) => {
-  if (request.session.userId) {
-    response.redirect('/home')
-  } else {
-    next()
-  }
-};
+  const redirectHome = (request, response, next) => {
+    if (request.session.userId) {
+      response.redirect('/home')
+    } else {
+      next()
+    }
+  };
 //
-app.use((request, response, next) => {
-  const {userId} = request.session;
-  if (userId) {
-    response.locals.user = users.find(
-        user => user.id === userId
-    )
-  }
-  next()
-});
+//   app.use((request, response, next) => {
+//     const {userId} = request.session;
+//     if (userId) {
+//       response.locals.user = users.find(
+//         user => user.id === userId
+//       )
+//     }
+//     next()
+//   });
 //
-// app.get('/', (request, response) => {
-//   const { userId } = request.session;
-//   response.render('/index', {userId: userId});
+//  app.get('/', (request, response) => {
+//    const { userId } = request.session;
+//    if (!_.isUndefined(userId)) {
+//      response.render('index.ejs', {
+//        userId: userId,
+//        title: "Food Detectives"
+//      });
+//    } else {
+//      response.render('index', {
+//        title: "Food Detectives"
+//      });
+//    }
+//  });
 // });
-//
 // app.get('/home', redirectLogin, (request, response) => {
 //   const { user } = response.locals
 //   console.log(request.sessionID)
@@ -187,22 +197,23 @@ app.use((request, response, next) => {
 //     response.redirect('/login')
 //   })
 // });
-
+})
 
 // catch 404 and forward to error handler
-app.use(function(request, response, next) {
-  next(createError(404));
-});
+  app.use(function (request, response, next) {
+    next(createError(404));
+  });
 
 // error handler
-app.use(function(err, request, response, next) {
-  // set locals, only providing error in development
-  response.locals.message = err.message;
-  response.locals.error = request.app.get('env') === 'development' ? err : {};
+  app.use(function (err, request, response, next) {
+    // set locals, only providing error in development
+    response.locals.message = err.message;
+    response.locals.error = request.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  response.status(err.status || 500);
-  response.render('error');
-});
+    // render the error page
+    response.status(err.status || 500);
+    response.render('error');
+  });
 
-module.exports = app;
+  module.exports = app;
+

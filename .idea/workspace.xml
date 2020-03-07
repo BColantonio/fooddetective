@@ -3,11 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ccdf9438-a8dc-454f-807b-f6048db5f75b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/db.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/db.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/partials/login.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/login.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,27 +162,31 @@
       <screen x="67" y="27" width="2491" height="1261" />
     </state>
     <state x="960" y="464" width="424" height="484" key="FileChooserDialogImpl/67.27.2491.1261@67.27.2491.1261" timestamp="1583454678414" />
-    <state width="2445" height="498" key="GridCell.Tab.0.bottom" timestamp="1583528760568">
-      <screen x="67" y="27" width="2491" height="1261" />
+    <state width="1238" height="341" key="GridCell.Tab.0.bottom" timestamp="1583556570005">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
+    <state width="1238" height="341" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1583556570005" />
     <state width="1215" height="105" key="GridCell.Tab.0.bottom/0.23.1280.709@0.23.1280.709" timestamp="1583190432050" />
     <state width="2445" height="498" key="GridCell.Tab.0.bottom/67.27.2491.1261@67.27.2491.1261" timestamp="1583528760568" />
     <state width="2447" height="397" key="GridCell.Tab.0.bottom/67.27.2493.1413@67.27.2493.1413" timestamp="1583127343110" />
-    <state width="2445" height="498" key="GridCell.Tab.0.center" timestamp="1583528760568">
-      <screen x="67" y="27" width="2491" height="1261" />
+    <state width="1238" height="341" key="GridCell.Tab.0.center" timestamp="1583556570003">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
+    <state width="1238" height="341" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1583556570003" />
     <state width="1215" height="105" key="GridCell.Tab.0.center/0.23.1280.709@0.23.1280.709" timestamp="1583190432050" />
     <state width="2445" height="498" key="GridCell.Tab.0.center/67.27.2491.1261@67.27.2491.1261" timestamp="1583528760568" />
     <state width="2447" height="397" key="GridCell.Tab.0.center/67.27.2493.1413@67.27.2493.1413" timestamp="1583127343109" />
-    <state width="2445" height="498" key="GridCell.Tab.0.left" timestamp="1583528760567">
-      <screen x="67" y="27" width="2491" height="1261" />
+    <state width="1238" height="341" key="GridCell.Tab.0.left" timestamp="1583556570003">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
+    <state width="1238" height="341" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1583556570003" />
     <state width="1215" height="105" key="GridCell.Tab.0.left/0.23.1280.709@0.23.1280.709" timestamp="1583190432049" />
     <state width="2445" height="498" key="GridCell.Tab.0.left/67.27.2491.1261@67.27.2491.1261" timestamp="1583528760567" />
     <state width="2447" height="397" key="GridCell.Tab.0.left/67.27.2493.1413@67.27.2493.1413" timestamp="1583127343109" />
-    <state width="2445" height="498" key="GridCell.Tab.0.right" timestamp="1583528760568">
-      <screen x="67" y="27" width="2491" height="1261" />
+    <state width="1238" height="341" key="GridCell.Tab.0.right" timestamp="1583556570004">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
+    <state width="1238" height="341" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1583556570004" />
     <state width="1215" height="105" key="GridCell.Tab.0.right/0.23.1280.709@0.23.1280.709" timestamp="1583190432050" />
     <state width="2445" height="498" key="GridCell.Tab.0.right/67.27.2491.1261@67.27.2491.1261" timestamp="1583528760568" />
     <state width="2447" height="397" key="GridCell.Tab.0.right/67.27.2493.1413@67.27.2493.1413" timestamp="1583127343110" />
@@ -245,9 +249,10 @@
     <state x="319" y="210" key="com.intellij.ide.util.TipDialog/0.23.1280.709@0.23.1280.709" timestamp="1583185454448" />
     <state x="640" y="385" key="com.intellij.ide.util.TipDialog/67.27.2491.1261@67.27.2491.1261" timestamp="1583455511332" />
     <state x="640" y="428" key="com.intellij.ide.util.TipDialog/67.27.2493.1413@67.27.2493.1413" timestamp="1583100267060" />
-    <state x="423" y="89" width="1593" height="979" key="find.popup" timestamp="1583520552051">
-      <screen x="67" y="27" width="2491" height="1261" />
+    <state x="183" y="39" width="819" height="622" key="find.popup" timestamp="1583556819713">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
+    <state x="183" y="39" width="819" height="622" key="find.popup/0.0.1280.800@0.0.1280.800" timestamp="1583556819713" />
     <state x="0" y="182" width="818" height="550" key="find.popup/0.23.1280.709@0.23.1280.709" timestamp="1583188931519" />
     <state x="423" y="89" width="1593" height="979" key="find.popup/67.27.2491.1261@67.27.2491.1261" timestamp="1583520552051" />
     <state x="772" y="337" width="1594" height="1097" key="find.popup/67.27.2493.1413@67.27.2493.1413" timestamp="1583105403739" />
