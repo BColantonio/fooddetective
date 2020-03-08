@@ -8,6 +8,8 @@ let createError = require('http-errors');
 let ejs = require('ejs');
 let mssql = require('mssql');
 let session = require('express-session');
+let mssqlstore = require('mssql-session-store')(session);
+let db = require('./db')
 
 let routes = {
   apiRouter: require('./routes/api'),
@@ -31,11 +33,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
-app.use(session({secret: 'orttal921', resave: false, saveUninitialized: false}));
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 25 * 1000 }
+}));
 app.use(express.static('./public'));
 //
 app.use(function(req, res, next){
-  console.log(req.session);
+  console.log('req.session', req.session);
+  res.locals.session = req.session;
+  console.log('response.locals', res.locals);
   next()
 });
 //

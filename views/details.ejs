@@ -9,51 +9,47 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 <body>
-
     <div class="MainBody">
+        <header>
+            <% include ./partials/header.ejs %>
+        </header>
+            <div id="rightBox">
+                <!-- <tr>
+                    <th>
+                        <h1><%=details.title%></h1>
+                    </th>
+                    <th>Badges</th>
+                    <th>Other Badges</th>
+                    <th>Nutrition</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <%details.badges.forEach(badge => { %>
+                    <td><%= badge %></td>
+                    <%})%>
 
-    <header>
-        <% include ./partials/header.ejs %>
 
-        <div id="rightBox">
-            <!-- <tr>
-                <th>
-                    <h1><%=details.title%></h1>
-                </th>
+                    <%details.important_badges.forEach(impBadge => { %>
 
-
-                <th>Badges</th>
-                <th>Other Badges</th>
-                <th>Nutrition</th>
-            </tr>
-            <tr>
-                <td></td>
-                <%details.badges.forEach(badge => { %>
-                <td><%= badge %></td>
+                    <td><%= impBadge %></td>
+                    <%})%>
+                    <%details.nutrition.nutrients.forEach(extract => { %>
+                    <td><%= extract.title %>,
+                    <%= extract.amount %>,
+                    <%= extract.unit %>,
+                    <%= extract.percentOfDailyNeeds %></td>
                 <%})%>
+                </tr>
+                <%=details.nutrition_widget%>
 
 
-                <%details.important_badges.forEach(impBadge => { %>
-
-                <td><%= impBadge %></td>
-                <%})%>
-                <%details.nutrition.nutrients.forEach(extract => { %>
-                <td><%= extract.title %>,
-                <%= extract.amount %>,
-                <%= extract.unit %>,
-                <%= extract.percentOfDailyNeeds %></td>
-            <%})%>
-            </tr>
-            <%=details.nutrition_widget%>
-
-
-            <%details.nutrition.fat%>
-            <%details.nutrition.calories%>
-            <%details.nutrition.protein%>
-            <%details.nutrition.carbs%>
-            <%details.serving_size%>
-            <%details.number_of_servings%>
-            <%details.description%> -->
+                <%details.nutrition.fat%>
+                <%details.nutrition.calories%>
+                <%details.nutrition.protein%>
+                <%details.nutrition.carbs%>
+                <%details.serving_size%>
+                <%details.number_of_servings%>
+                <%details.description%> -->
 
 
 
@@ -62,12 +58,9 @@
                     <tbody>
                         <tr>
                             <td align="center" class="header">Nutrition Facts of </td>
-
                         </tr>
-
                         <tr>
                             <td>
-
                                 <div class="serving">
                                     <h1><%=details.title%></h1>
                                 </div>
@@ -81,11 +74,6 @@
                                 <div class="line"></div>
                             </td>
                         </tr>
-
-
-
-
-
                         <table style="width:100%">
                             <%details.nutrition.nutrients.forEach(extract => { %>
                             <tr>
@@ -93,77 +81,54 @@
                                 <th><%= extract.unit %></th>
                                 <th><%= extract.percentOfDailyNeeds %></th>
                             </tr>
-
-
                             <%})%>
                         </table>
-
-
-
-
                         <tr>
-
-                                <div class="line">
-                                    <h1>Badges</h1>
-                                    <table style="width:100%">
-
-                                        <%details.badges.forEach(badge => { %>
-                                        <tr>
-
-                                            <th><%= badge, %></th>
-
-                                        </tr>
-                                        <%})%>
-                                    </table>
-
-
-
-
-                                </div>
-
+                            <div class="line">
+                                <h1>Badges</h1>
+                                <table style="width:100%">
+                                    <%details.badges.forEach(badge => { %>
+                                    <tr>
+                                        <th><%= badge, %></th>
+                                    </tr>
+                                    <%})%>
+                                </table>
+                            </div>
                         </tr>
-
-
                         <tr style="height: 7px">
                             <td bgcolor="#000000"></td>
-                        </tr>
-                        <tr>
-
                         </tr>
                         <tr>
                             <td>
                                 <div class="line">
                                     <h1>Important Badges</h1>
                                     <table style="width:100%">
-
                                         <%details.important_badges.forEach(impBadge => { %>
                                         <tr>
-
                                             <th><%= impBadge, %></th>
-
                                         </tr>
                                         <%})%>
                                     </table>
-
-
-
                                 </div>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-
-
-
-
-        </div>
-        <div id="LeftBox">
-<Center>
-            <img src="<%= details.images[1]%>">
-
-        </Center>
-        </div>
+            <div id="LeftBox">
+                <Center>
+                        <tr>
+                            <td>
+                                <img src="<%= details.images[1]%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button id="addFavorite">Favorite</button>
+                            </td>
+                        </tr>
+                </Center>
+            </div>
     </div>
     <% include ./partials/footer %>
 </body>

@@ -1,4 +1,6 @@
 let mssql = require('mssql');
+jsSHA = require("jssha");
+
 const config = {
     user: 'detectives',
     password: 'neit2020',
@@ -7,49 +9,51 @@ const config = {
     port: 4500
 };
 
-// const pool1 = new mssql.ConnectionPool(config);
-// const pool1Connect = pool1.connect();
-// pool1.on('error', err => {
-//     console.log(err);
-// });
-//
-// let initialConnectSQL = async () => {
-//     await pool1Connect;
-//     try {
-//         const request = pool1.connect((error) => {console.log(error)});
-//         const result = await request;
-//         console.dir(result);
-//         return result
-//     } catch (err) {
-//         console.error('SQL error', err);
-//     }
-// };
-// //
-// let finalDisconnectSQL = async () => {
-//     await initialConnect;
-//     try {
-//         // make sure that any items are correctly URL encoded in the connection string
-//         const request = pool1.close((result) => {console.log(result)});
-//         const result = await request;        // const result = await sql.query`select * from mytable where id = ${value}`
-//         console.dir(result)
-//     } catch (err) {
-//         console.error('SQL error', err);
-//     }
-// };
-//
+
 /* GET home page. */
 async function loginSQL(username, password) {
     this.username = username;
     this.password = password;
-    let pool = await mssql.connect(config)
+    let hashObj = new jsSHA("SHA-512", "TEXT", {numRounds: 1});
+    hashObj.update(this.password);
+    let hashPass = hashObj.getHash("HEX");
+    let pool = await mssql.connect(config);
     let connecter = async () => {
             return pool.request()
             .input('username', mssql.VarChar(30), this.username)
-            .input('password', mssql.VarChar(30), this.password)
+            .input('password', mssql.VarChar(30), hashPass)
             .execute('usp_Users_UserLogin')
     };
     return await connecter();
 
+}
+
+async function registerSQL(
+    username,
+    password,
+    firstName,
+    lastName,
+    emailAddress
+                            ) {
+    this.username = username;
+    this.password = password;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.emailAddress = emailAddress;
+    let hashObj = new jsSHA("SHA-512", "TEXT", {numRounds: 1});
+    hashObj.update(this.password);
+    let hashPass = hashObj.getHash("HEX");
+    let pool = await mssql.connect(config);
+    let connecter = async () => {
+        return pool.request()
+            .input('userName', mssql.VarChar(30), this.username)
+            .input('password', mssql.VarChar(30), hashPass)
+            .input('firstName', mssql.VarChar(30), this.firstName)
+            .input('lastName', mssql.VarChar(30), this.lastName)
+            .input('emailAddress', mssql.VarChar(30), this.emailAddress)
+            .execute('usp_Users_CreateNewUser')
+    };
+    return await connecter();
 }
 
 //     var results;
@@ -77,6 +81,7 @@ async function loginSQL(username, password) {
 // });
 module.exports = {
     config: config,
-    login: loginSQL
+    login: loginSQL,
+    register: registerSQL
 };
 

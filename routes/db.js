@@ -14,9 +14,22 @@ router.post('/login', async function(req, res) {
     let password = req.body.password;
     results = await db.login(username, password);
     console.log(results);
-    res.render('index', {title: 'Food Detectives'})
+    req.session['userID'] = results.recordset[0].userID;
+    res.render('index', {title: 'Food Detectives', username: username, userID: results.recordset[0].userID})
 });
 
+router.post('/register', async function(req, res) {
+    let results;
+    let username = req.body.username;
+    let password = req.body.password;
+    let firstName = req.body.firstName;
+    let lastName = req.body.lastName;
+    let emailAddress = req.body.emailAddress;
+    results = await db.register(username, password, firstName, lastName, emailAddress);
+    console.log(results);
+    req.session['userID'] = results.recordset[0].userID;
+    res.render('index', {title: 'Food Detectives', username: username, userID: results.recordset[0].userID})
+});
 // const redirectLogin = (request, response, next) => {
 //     if (!request.session.userId) {
 //         response.redirect('/login')
