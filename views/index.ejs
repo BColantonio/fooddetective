@@ -2,8 +2,7 @@
 <html>
 <head>
   <title><%= title %></title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel='stylesheet' href='style' />
+
   <script
           src="https://code.jquery.com/jquery-3.4.1.min.js"
           integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -16,15 +15,18 @@
 <body>
 <% include ./partials/header.ejs %>
 <div id="MainBody">
+  <% include ./partials/search.ejs %>
   <div id="LeftBox">
     <div id="content">
-      <h1>Our Mission</h1>
-      <p>Whether it be allergies, dietary restrictions, or ethical standards, its fair to assume that most of us have other activities we prefer over standing around in grocery stores and reading product labels. Food Detective is designed to quickly and easily provide all the information you will need to maintain your dietary lifestyle. Our time is valuable. Let’s take it back! </p>
+      <h1 style="text-align:center; font-size: 300%; color: rgb(245,136,40);">Our Mission</h1>
+      <p id="blabla">Whether it be allergies, dietary restrictions, or ethical standards, its fair to assume that most of us have other activities we prefer over standing around in grocery stores and reading product labels.
+         Food Detective is designed to quickly and easily provide all the information you will need to maintain your dietary lifestyle. Our time is valuable. Let’s take it back! </p>
     </div>
   </div>
   <div id="rightBox">
     <% include ./partials/userForm.ejs%>
   </div>
+
 </div>
 <% include ./partials/footer.ejs %>
 </body>

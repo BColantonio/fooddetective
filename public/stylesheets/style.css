@@ -1,42 +1,23 @@
 body {
-  max-width: 75%;
+  max-width: 70%;
   margin: auto;
   /* border: solid rgb(54, 199, 24) 2px; */
   background-image: url(../images/body3.png);
 }
 
-#MainBodyReg {
-  display: flex;
-  justify-content: center;
+#blabla{
+
+  margin-left: 10px;
+  margin-top: 10%;
+  font-size:30px;
+  color:rgb(15,150,76);
 }
-/* #page {
-  display:flex;
-  justify-content: center;
-  min-height: 100vh;
-} */
-
-/* #content {
-  width: 100%;
-  font-family: sans-serif;
-  padding: 0 20px;
-  font-size: 20px;
-  margin-top: 3em;
-  line-height: 45px;
-  text-align: justify;
-} */
-
-#page>tr {
-  display: inline-flex;
-  justify-content: center;
-}
-
-
 
 
 
 header {
   width: 100%;
-  height: 300px;
+  height: 200px;
   /* background: rgba(255, 146, 82, 0.5); */
   /* border: solid black 2px; */
 }
@@ -44,52 +25,85 @@ header {
 #MainBody {
   width: 100%;
   height: auto;
-  display: flex;
-  justify-content: space-between;
+  flex-direction: row ;
+  justify-content:space-between;
+  flex-wrap: wrap;
+  display: inline-flex;
   /* border: solid rgb(191, 29, 206) 2px; */
 }
 
 #LeftBox {
   min-width: 30%;
   width: 40%;
+  height: 700px;
   background: rgba(255, 255, 255, 0.692);
+   /* border: solid rgb(191, 29, 206) 2px; */
   border-radius: 25px;
-
+  margin-top: 50px;
   margin-left: 100px;
+  order: 1;
+  flex-wrap: wrap;
+
+
+
 }
 
 #LeftBox2 {
   min-width: 30%;
-  width: 60%;
+  width: 100%;
   background: rgba(255, 255, 255, 0.692);
   border-radius: 25px;
+  margin-top: 50px;
+  align-self: center;
+
+}
+
+#LeftBox3 {
+  margin-top: 10%;
   margin-left: 100px;
-  text-align: center;
+  /* border: solid rgb(191, 29, 206) 2px; */
+  padding: 20px;
+  margin-bottom: 50px;
+  order: 1;
+  flex-wrap: wrap;
 }
 
 
-
 #rightBox {
-  float: right;
-  min-width: 40%;
-  width: 45%;
-
+  /* float: right; */
+  width: 40%;
   /* border: solid rgb(191, 29, 206) 2px; */
   background: rgba(255, 255, 255, 0.692);
   border-radius: 25px;
-  margin-right: 10s0px;
+  margin-right: 100px;
+  margin-top: 50px;
+  order: 2;
+  flex-wrap: wrap;
+
+
+
 }
 
 #RightBox2 {
   float: right;
   margin-left: 39px;
   width: 40%;
-  height: 800px;
   /* border: solid rgb(191, 29, 206) 2px; */
   background: rgba(255, 255, 255, 0.692);
   margin-top: 80px;
   margin-right: 55px;
   border-radius: 25px;
+}
+#RightBox3 {
+
+  width: 40%;
+  /* border: solid rgb(191, 29, 206) 2px; */
+  background: rgba(255, 255, 255, 0.692);
+  margin-top: 20px;
+  margin-right: 55px;
+  border-radius: 25px;
+  order: 2;
+  flex-wrap: wrap;
 }
 
 #Favbox {
@@ -107,12 +121,11 @@ header {
 }
 
 #search {
+  min-width:100% ;
   width: 35%;
-  height: 20px;
-  /* border: solid rgb(50, 206, 29) 2px; */
-  float: left;
-  margin-top: 220px;
-  margin-left: 140px;
+  margin: auto;
+  /*border: solid rgb(50, 206, 29) 2px; */
+  margin-bottom: 25px;
   text-align: center;
 }
 
@@ -123,27 +136,31 @@ header {
   /* border: solid rgb(191, 29, 206) 2px; */
   margin-top: 25px;
   margin-right: 25px;
-  position: relative;
+
 }
 
-/*#search form input {*/
-/*  width: 80%;*/
-/*}*/
+#ProdName{
+color:rgb(15,150,76);
+
+}
+
 
 footer {
   text-align: center;
   clear: both;
   width: 100%;
-  float: none;
   /* background: rgba(255, 146, 82, 0.5); */
   height: 60px;
   /* border: solid rgb(186, 12, 230) 2px; */
 }
 
+
+
 #logo {
   float: left;
-  width: 24%;
-  height: 200px;
+  width: 20%;
+  min-width: 15%;
+  height: 70%;
   /* border: solid rgb(191, 29, 206) 2px; */
   margin-top: 25px;
   margin-left: 10px;
@@ -151,8 +168,34 @@ footer {
   background-size: 100% 100%;
   /* background-repeat: no-repeat; */
   position: relative;
-}
 
+}
+#myButton {
+	box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	background:linear-gradient(to bottom, #ffc477 5%, #fb9e25 100%);
+	background-color:#ffc477;
+	border-radius:23px;
+	border:3px solid #eeb44f;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:19px;
+	font-weight:bold;
+	padding:11px 9px;
+	text-decoration:none;
+  text-shadow:0px 1px 0px #cc9f52;
+  margin-left: 50px;
+  margin-right: 5px;
+}
+#myButton:hover {
+  background:linear-gradient(to bottom, #fb9e25 5%, #ffc477 100%);
+	background-color:#fb9e25;
+}
+#myButton:active {
+	position:relative;
+	top:1px;
+}
 
 /*registration -----------------------------------------------------------------------------------------------------*/
 
@@ -168,7 +211,7 @@ footer {
 #subtitle {
   text-align: center;
   font-size: 14px;
-  color: rgb(70, 70, 70);
+  color: rgb(245,136,40);
 }
 
 form {
@@ -180,6 +223,7 @@ form {
   /* border: 2px red solid; */
   width: 100%;
   height: 35px;
+
 }
 
 #terms-conditions {
@@ -189,7 +233,7 @@ form {
   /* border: 2px red solid; */
 }
 
-#a-submit {
+#theform {
   display: block;
   margin: auto;
   text-align: center;
@@ -200,19 +244,19 @@ form {
   cursor: pointer;
   width: 100%;
   font-size: 14px;
-  color: rgb(27, 140, 233);
+  color: rgb(15,150,76);
   font-weight: 700;
 }
 
-#a-submit:hover {
-  border: 1px solid rgb(27, 140, 233);
-  background-color: rgb(27, 140, 233);
+#theform:hover {
+  border: 1px solid rgbrgb(240, 90, 40);
+  background-color: rgb(240, 90, 40);
   color: white;
   width: 50%;
   /* box-shadow: 2px 3px 10px rgb(211, 211, 211); */
 }
 
-#a-submit:active {
+#theform:active {
   width: 40%;
   /* box-shadow: 2px 3px 10px rgb(211, 211, 211); */
 }
@@ -226,9 +270,8 @@ form {
   border-radius: 5px;
   display: inline-block;
   font-size: 0px;
-  padding: 10px;
-  z-index: 1;
-  width: 100%;
+  width: 35%;
+  text-align: center;
 }
 
 .searchProperties input {
@@ -241,8 +284,9 @@ form {
   font-weight: 400;
   height: 40px;
   margin: 0;
-  padding: 0 10px;
-  width: 75%;
+  width: 70%;
+  margin-left: 10px;
+
 }
 
 .ie .searchProperties input {
@@ -263,17 +307,19 @@ form {
   float: left;
   font-size: 12px;
   font-weight: 400;
-  height: 41px;
+  height: 44px;
   line-height: 40px;
   margin: 0;
   padding: 0;
   position: relative;
-  width: 20%;
+  width: 25%;
+
 }
 
 .searchProperties button:hover {
   background: rgb(240, 90, 40);
 }
+
 
 
 /* login------------------------------------------------------------------------------------------------------------------------ */
@@ -464,8 +510,6 @@ nav ul li:hover a {
   border: 1px solid black;
   width: 100%;
 
-
-  margin-top: 25px;
 }
 
 #nutritionfacts td {
@@ -478,7 +522,7 @@ nav ul li:hover a {
 
 #nutritionfacts td.header {
   font-family: 'Arial Black', 'Helvetica Bold', sans-serif;
-  font-size: 35px;
+  font-size: 15px;
   white-space: nowrap;
 }
 

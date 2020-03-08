@@ -2,8 +2,8 @@
 <html>
 <head>
     <title><%= title %></title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    
+    <link rel='stylesheet' href='/fooddetective/public/stylesheets/style.css' />
     <script
             src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -13,24 +13,24 @@
           href="images/favicon.png">
 </head>
 <body>
-<div class="main-container"></div>
-<header>
-    <% include ./partials/header.ejs %>
-</header>
+      <% include ./partials/header.ejs %>
+<div id="MainBody">
+<% include ./partials/search.ejs %>
 
-<center>
+
 <div id="LeftBox2">
-    <table class="table">
+  
+    <table class="table"  style="text-align: left  ; ">
 
         <tbody>
         <% products.forEach( product => { %>
             <tr>
                 <%let id=product.id%>
                 <form id="<%= id %>" action="/api/advancedSearch" enctype="application/x-www-form-urlencoded">
-                    <th id="title" scope="row"><a href="#"><%= product.title %></a></th>
+                    <th id="title" scope="row"><a id=" ProdName" style="color:rgb(15,150,76)" href="#"><%= product.title %></a></th>
                     <td><input type="radio" id="<%=product.id%>" name="productId" value="<%=product.id%>"></td>
                     <td><img src="<%= product.image %>"></td>
-                    <td><input type="submit" value="GO"></td>
+                    <td><input type="submit" id="myButton" value="GO"></td>
                 </form>
                 <script>
                   function go(idPass) {
@@ -54,7 +54,10 @@
         <% }); %>
         </tbody>
     </table>
-    <h1>Our Post Page!</h1>
+
 </div>
+
 </div>
+<% include ./partials/footer %>
 </body>
+</html>
