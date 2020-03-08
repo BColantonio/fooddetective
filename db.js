@@ -6,6 +6,7 @@ const config = {
     database: 'se425_food_detectives',
     port: 4500
 };
+
 // const pool1 = new mssql.ConnectionPool(config);
 // const pool1Connect = pool1.connect();
 // pool1.on('error', err => {
@@ -51,27 +52,27 @@ async function loginSQL(username, password) {
 
 }
 
-    // var results;
-    // var username = req.body.username;
-    // var password = req.body.password;
-    // sql.connect(db).then(pool => {
-    //     return pool.request()
-    //         .input('username', sql.VarChar(30), username)
-    //         .input('password', sql.VarChar(30), password)
-    //         .output('returnValue', sql.VarChar(50))
-    //         .execute('usp_Users_UserLogin')
-    // }).then(result => {
-    //     //console.log(result)
-    //     results = result;
-    //     // console.log(results)
-    //     if (result.output.returnValue == 1) {
-    //         res.redirect('/preferences');
-    //     } else {
-    //         console.log('error')
-    //     }
-    // }).catch(err => {
-    //     console.log(err)
-    // })
+//     var results;
+//     var username = req.body.username;
+//     var password = req.body.password;
+//     sql.connect(db).then(pool => {
+//         return pool.request()
+//             .input('username', sql.VarChar(30), username)
+//             .input('password', sql.VarChar(30), password)
+//             .output('returnValue', sql.VarChar(50))
+//             .execute('usp_Users_UserLogin')
+//     }).then(result => {
+//         //console.log(result)
+//         results = result;
+//         // console.log(results)
+//         if (result.output.returnValue == 1) {
+//             res.redirect('/preferences');
+//         } else {
+//             console.log('error')
+//         }
+//     }).catch(err => {
+//         console.log(err)
+//     })
 //
 // });
 module.exports = {

@@ -17,6 +17,7 @@
     "lodash": "^4.17.15",
     "morgan": "~1.9.1",
     "mssql": "^6.1.0",
+    "mssql-session-store": "^1.0.0",
     "serve-favicon": "^2.5.0",
     "unirest": "^0.6.0"
   },

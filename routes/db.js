@@ -1,10 +1,8 @@
 let _ = require('lodash');
-let bodyParser = require('body-parser')
+let bodyParser = require('body-parser');
 let express = require('express');
-let path = require('path');
 let router = express.Router();
 let db = require('../db');
-let mssql = require('mssql');
 
 router.use(bodyParser.urlencoded({
     extended: true
@@ -15,22 +13,10 @@ router.post('/login', async function(req, res) {
     let username = req.body.username;
     let password = req.body.password;
     results = await db.login(username, password);
-    console.log('return value of db', results)
+    console.log(results);
+    res.render('index', {title: 'Food Detectives'})
 });
-// router.use(session({        // TODO: look into session store
-//     name: SESS_NAME,
-//     resave: false,                  // rolling: Force a session identifier cookie to be set on every response.
-//     saveUninitialized: false,       //          The expiration is reset to the original maxAge, resetting the expiration
-//     secret: SESS_SECRET,            //          countdown.          The default value is: false.
-//     cookie: {                       // NOTE:    When this option is set to: true; but the <saveUninitialized> option is set
-//         maxAge: 900000,             //          to: false, the cookie will not be set on a response with an uninitialized session.
-//         sameSite: true,             //          It only makes sense to issue a cookie if user is authenticated. If you are not authenticated
-//         secure: IN_PROD             //          there is no id to issue
-//     }
-// }));                                // store:   DB implementation for session stores. When this isn't provided, default: is :in-memory: store.
-//                                     // unset:   allows for session var access through the request object for every connection to the server
-//                                     // destroy: useful for when user logs out.
-//                                     // regenerate:
+
 // const redirectLogin = (request, response, next) => {
 //     if (!request.session.userId) {
 //         response.redirect('/login')

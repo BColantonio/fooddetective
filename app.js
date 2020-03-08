@@ -7,6 +7,7 @@ let bodyParser = require('body-parser');
 let createError = require('http-errors');
 let ejs = require('ejs');
 let mssql = require('mssql');
+let session = require('express-session');
 
 let routes = {
   apiRouter: require('./routes/api'),
@@ -18,7 +19,6 @@ let app = express();
 
 app.set('view engine', 'ejs');
 
-let session = require('express-session');
 let apiRouter = routes.apiRouter;
 let dbRouter = routes.dbRouter;
 let indexRouter = routes.indexRouter;
@@ -29,30 +29,20 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
+app.use(session({secret: 'orttal921', resave: false, saveUninitialized: false}));
 app.use(express.static('./public'));
+//
+app.use(function(req, res, next){
+  console.log(req.session);
+  next()
+});
+//
 app.use('/api', apiRouter);
 app.use('/db', dbRouter);
 app.use('/', indexRouter);
 
-(bodyParser.urlencoded({
-  extended: true
-}));
-//
-app.use(session({        // TODO: look into session store
-  name: 'fooddetectivesession',
-  resave: false,                  // rolling: Force a session identifier cookie to be set on every response.
-  saveUninitialized: false,       //          The expiration is reset to the original maxAge, resetting the expiration
-  secret: 'SESS_SECRET',            //          countdown.          The default value is: false.
-  cookie: {                       // NOTE:    When this option is set to: true; but the <saveUninitialized> option is set
-    maxAge: 900000,               //          to: false, the cookie will not be set on a response with an uninitialized session.
-    sameSite: true,               //          It only makes sense to issue a cookie if user is authenticated. If you are not authenticated
-    secure: false               //          there is no id to issue
-  }
-}));                                // store:   DB implementation for session stores. When this isn't provided, default: is :in-memory: store.
-//                                     // unset:   allows for session var access through the request object for every connection to the server
-//                                     // destroy: useful for when user logs out.
-//                                     // regenerate:
 const redirectLogin = (request, response, next) => {
   if (!request.session.userId) {
     response.redirect('/login')

@@ -15,7 +15,7 @@ let userId;
 // });
 
 router.get('/', (request, response) => {
-  if (request.session) {
+  if (request.session.userID) {
    userId = request.session;
   }
   if (!_.isUndefined(userId)) {
