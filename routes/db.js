@@ -1,24 +1,22 @@
-const _ = require('lodash');
-const bodyParser = require('body-parser')
-const express = require('express');
-const path = require('path');
-const router = express.Router();
-const session = require('express-session');
-const NODE_ENV = 'development';
-const IN_PROD = NODE_ENV === 'production';
-const SESS_NAME = 'sid';
-const SESS_SECRET = ' asdf ';
-const db = require('../db');
-const sql = require('mssql');
-// const users = [
-//     { id: 1, name: 'John', email: 'john@gmail.com', password: '1234' },
-//     { id: 2, name: 'Sam', email: 'sam@gmail.com', password: '1234' },
-//     { id: 3, name: 'Bill', email: 'bill@gmail.com', password: '1234' }
-// ]
-//
-// router.use(bodyParser.urlencoded({
-//     extended: true
-// }))
+let _ = require('lodash');
+let bodyParser = require('body-parser')
+let express = require('express');
+let path = require('path');
+let router = express.Router();
+let db = require('../db');
+let mssql = require('mssql');
+
+router.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+router.post('/login', async function(req, res) {
+    let results;
+    let username = req.body.username;
+    let password = req.body.password;
+    results = await db.login(username, password);
+    console.log('return value of db', results)
+});
 // router.use(session({        // TODO: look into session store
 //     name: SESS_NAME,
 //     resave: false,                  // rolling: Force a session identifier cookie to be set on every response.
