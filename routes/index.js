@@ -1,6 +1,12 @@
-const _ = require('lodash');
 const express = require('express');
 const router = express.Router();
+
+const _ = require('lodash');
+const unirest = require('unirest');
+const sql = require('mssql');
+var db = require('../db');
+let details;
+let products;
 let userId;
 // router.use('/public', express.static('./'))
 /* GET home page. */
@@ -9,7 +15,7 @@ let userId;
 // });
 
 router.get('/', (request, response) => {
-  if (request.session) {
+  if (request.session.userID) {
    userId = request.session;
   }
   if (!_.isUndefined(userId)) {

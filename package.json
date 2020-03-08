@@ -14,9 +14,12 @@
     "express": "~4.16.1",
     "express-session": "^1.17.0",
     "http-errors": "~1.6.3",
+    "jssha": "^2.3.1",
     "lodash": "^4.17.15",
     "morgan": "~1.9.1",
     "mssql": "^6.1.0",
+    "mssql-session-store": "^1.0.0",
+    "serve-favicon": "^2.5.0",
     "unirest": "^0.6.0"
   },
   "devDependencies": {

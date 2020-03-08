@@ -1,33 +1,63 @@
+
 <!DOCTYPE html>
 <html>
-
 <head>
-    <link rel='stylesheet' href='/fooddetective/public/stylesheets/style.css' />
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
-
 <body>
-    <% include ./partials/header.ejs %>
-    <div id="MainBody">
-
-        <% include ./partials/search.ejs %>
-
-
+    <div class="MainBody">
+        <header>
+            <% include ./partials/header.ejs %>
+        </header>
             <div id="rightBox">
+                <!-- <tr>
+                    <th>
+                        <h1><%=details.title%></h1>
+                    </th>
+                    <th>Badges</th>
+                    <th>Other Badges</th>
+                    <th>Nutrition</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <%details.badges.forEach(badge => { %>
+                    <td><%= badge %></td>
+                    <%})%>
+
+
+                    <%details.important_badges.forEach(impBadge => { %>
+
+                    <td><%= impBadge %></td>
+                    <%})%>
+                    <%details.nutrition.nutrients.forEach(extract => { %>
+                    <td><%= extract.title %>,
+                    <%= extract.amount %>,
+                    <%= extract.unit %>,
+                    <%= extract.percentOfDailyNeeds %></td>
+                <%})%>
+                </tr>
+                <%=details.nutrition_widget%>
+
+
+                <%details.nutrition.fat%>
+                <%details.nutrition.calories%>
+                <%details.nutrition.protein%>
+                <%details.nutrition.carbs%>
+                <%details.serving_size%>
+                <%details.number_of_servings%>
+                <%details.description%> -->
 
 
 
-
-                <div id="nutritionfacts" style="text-align: left;">
+            <div id="nutritionfacts">
                 <table width="100%" cellspacing="0" cellpadding="0">
                     <tbody>
                         <tr>
-                            <td align="center" class="header">
-                                <h1 style="font-size: 300%; text-align: center; text-decoration: underline">Nutrition
-                                    Facts</h1>
-                            </td>
+                            <td align="center" class="header">Nutrition Facts of </td>
                         </tr>
                         <tr>
                             <td>
@@ -53,29 +83,26 @@
                             </tr>
                             <%})%>
                         </table>
-                        <div class="line">
-                            <h1>Badges</h1>
-                            <table style="width:100%">
-                                <%details.badges.forEach(badge => { %>
-                                <tr>
-                                    <th><%= badge, %></th>
-                                </tr>
-                                <%})%>
-                            </table>
-                        </div>
+                        <tr>
+                            <div class="line">
+                                <h1>Badges</h1>
+                                <table style="width:100%">
+                                    <%details.badges.forEach(badge => { %>
+                                    <tr>
+                                        <th><%= badge, %></th>
+                                    </tr>
+                                    <%})%>
+                                </table>
+                            </div>
                         </tr>
                         <tr style="height: 7px">
                             <td bgcolor="#000000"></td>
-                        </tr>
-                        <tr>
-
                         </tr>
                         <tr>
                             <td>
                                 <div class="line">
                                     <h1>Important Badges</h1>
                                     <table style="width:100%">
-
                                         <%details.important_badges.forEach(impBadge => { %>
                                         <tr>
                                             <th><%= impBadge, %></th>
@@ -86,19 +113,24 @@
                             </td>
                         </tr>
                     </tbody>
-                    </table>
-                </div>
+                </table>
             </div>
-            <div id="LeftBox3">
+            <div id="LeftBox">
                 <Center>
-                    <img src="<%= details.images[1]%>">
-
+                        <tr>
+                            <td>
+                                <img src="<%= details.images[1]%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button id="addFavorite">Favorite</button>
+                            </td>
+                        </tr>
                 </Center>
             </div>
     </div>
     <% include ./partials/footer %>
-</div>
-
 </body>
-
 </html>
+
