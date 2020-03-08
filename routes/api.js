@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const api = require('../api')
+const api = require('../api');
 const express = require('express');
 const router = express.Router();
 
