@@ -9,6 +9,7 @@
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
             crossorigin="anonymous"></script>
     <script src="/scripts/preferences.js"></script>
+    <script src="/scripts/index.js"></script>
     <link rel="icon"
           type="image/png"
           href="images/favicon.png">
@@ -26,15 +27,15 @@
         <div>
             <form id="signupBox" method="post">
                 <label>Username</label>
-                <input type="text" name="username" class="form-control" aria-describedby="emailHelp" value="<%=userInfo.firstName%>">
+                <input type="text" name="username" class="form-control" aria-describedby="emailHelp" <%if (typeof(userInfo !== 'undefined')) {%>value="<%=userInfo.firstName}%>">
                 <label>Password</label>
-                <input type="password" name="password0" class="form-control"value="<%=userInfo.password%>">
+                <input type="password" name="password0" class="form-control" <%if (typeof(userInfo !== 'undefined')) { %> value="<%=userInfo.password}%>">
                 <label>First Name</label>
-                <input type="text" name="firstName" class="form-control" value="<%=userInfo.firstName%>">
+                <input type="text" name="firstName" class="form-control" <%if (typeof(userInfo !== 'undefined')) { %> value="<%=userInfo.firstName}%>">
                 <label>Last Name</label>
-                <input type="text" name="lastName" class="form-control" value="<%=userInfo.lastName%>">
+                <input type="text" name="lastName" class="form-control"<%if (typeof(userInfo!== 'undefined')) { %> value="<%=userInfo.lastName}%>">
                 <label for="exampleInputEmail1">Email Address</label>
-                <input type="email" name="email" class="form-control" aria-describedby="emailHelp"value="<%=userInfo.email%>">
+                <input type="email" name="email" class="form-control" aria-describedby="emailHelp"<%if (typeof(userInfo !== 'undefined')) { %> value="<%=userInfo.emailAddress}%>">
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 <p id="more1" style="color: coral; font-weight: bold">The dietary preferences you choose will be used to filter your search results</p>
                 <input type="radio" id="diet0" name="diet" value="vegetarian">

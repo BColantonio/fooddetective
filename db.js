@@ -18,13 +18,13 @@ async function loginSQL(username, password) {
     hashObj.update(this.password);
     let hashPass = hashObj.getHash("HEX");
     let pool = await mssql.connect(config);
-    let connecter = async () => {
+    let connector = async () => {
             return pool.request()
             .input('username', mssql.VarChar(30), this.username)
             .input('password', mssql.VarChar(30), hashPass)
             .execute('usp_Users_UserLogin')
     };
-    return await connecter();
+    return await connector();
 
 }
 
@@ -44,7 +44,7 @@ async function registerSQL(
     hashObj.update(this.password);
     let hashPass = hashObj.getHash("HEX");
     let pool = await mssql.connect(config);
-    let connecter = async () => {
+    let connector = async () => {
         return pool.request()
             .input('userName', mssql.VarChar(30), this.username)
             .input('password', mssql.VarChar(30), hashPass)
@@ -53,9 +53,24 @@ async function registerSQL(
             .input('emailAddress', mssql.VarChar(30), this.emailAddress)
             .execute('usp_Users_CreateNewUser')
     };
-    return await connecter();
+    return await connector();
 }
 
+async function saveFavoriteSQL(
+  userID,
+  productID,
+) {
+    this.userID = userID;
+    this.productID = productID;
+    let pool = await mssql.connect(config);
+    let connector = async () => {
+        return pool.request()
+          .input('userid', mssql.uniqueidentifier, this.userID)
+          .input('favoritesSplitByComma', mssql.VarChar(max), this.productID)
+          .execute('usp_Favorites_ModifyUserFavorites')
+    };
+    return await connector();
+}
 //     var results;
 //     var username = req.body.username;
 //     var password = req.body.password;
@@ -82,6 +97,7 @@ async function registerSQL(
 module.exports = {
     config: config,
     login: loginSQL,
-    register: registerSQL
+    register: registerSQL,
+    saveFavorite: saveFavoriteSQL
 };
 

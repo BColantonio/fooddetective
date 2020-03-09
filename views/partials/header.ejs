@@ -2,14 +2,15 @@
 <link rel='stylesheet' href='/stylesheets/style.css' />
 
 <header>
-    <a href="/">
-    <div id="logo" >
-
-
-    </div>
-    </a>
-
-
+    <div class="logobody">
+        <!-- Photo Grid -->
+        <div class="logorow">
+            <div class="logocolumn">
+                <a href="/">
+                    <img src="/images/image0.png" style="width:100%;">
+                </a>
+            </div>
+        </div>
     </div>
     <% if (typeof userID === 'undefined') { %>
     <% include ./login.ejs %>

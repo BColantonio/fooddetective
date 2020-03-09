@@ -3,7 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="ccdf9438-a8dc-454f-807b-f6048db5f75b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/preferences.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/preferences.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/details.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/details.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partials/footer.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/footer.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/partials/header.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/header.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partials/menuContent.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/menuContent.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/preferences.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/preferences.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/products.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/products.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +34,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="EJS" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -57,6 +74,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.14.1" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../fd4" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -156,10 +180,10 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="907" y="318" width="800" height="677" key="#Notifications" timestamp="1583720491052">
+    <state x="907" y="318" width="800" height="677" key="#ESLint" timestamp="1583722129366">
       <screen x="67" y="27" width="2491" height="1261" />
     </state>
-    <state x="907" y="318" width="800" height="677" key="#Notifications/67.27.2491.1261@67.27.2491.1261" timestamp="1583720491052" />
+    <state x="907" y="318" width="800" height="677" key="#ESLint/67.27.2491.1261@67.27.2491.1261" timestamp="1583722129366" />
     <state x="907" y="318" width="800" height="677" key="#Notifications" timestamp="1583720068890">
       <screen x="67" y="27" width="2491" height="1261" />
     </state>
@@ -267,28 +291,20 @@
     <state x="319" y="210" key="com.intellij.ide.util.TipDialog/0.23.1280.709@0.23.1280.709" timestamp="1583185454448" />
     <state x="640" y="385" key="com.intellij.ide.util.TipDialog/67.27.2491.1261@67.27.2491.1261" timestamp="1583455511332" />
     <state x="640" y="428" key="com.intellij.ide.util.TipDialog/67.27.2493.1413@67.27.2493.1413" timestamp="1583100267060" />
-    <state x="423" y="89" width="1593" height="979" key="find.popup" timestamp="1583707546241">
+    <state x="423" y="89" width="1593" height="979" key="find.popup" timestamp="1583745217751">
       <screen x="67" y="27" width="2491" height="1261" />
     </state>
     <state x="0" y="182" width="818" height="550" key="find.popup/0.23.1280.709@0.23.1280.709" timestamp="1583188931519" />
-    <state x="423" y="89" width="1593" height="979" key="find.popup/67.27.2491.1261@67.27.2491.1261" timestamp="1583707546241" />
+    <state x="423" y="89" width="1593" height="979" key="find.popup/67.27.2491.1261@67.27.2491.1261" timestamp="1583745217751" />
     <state x="772" y="337" width="1594" height="1097" key="find.popup/67.27.2493.1413@67.27.2493.1413" timestamp="1583105403739" />
     <state x="1039" y="319" width="537" height="674" key="git4idea.branch.GitSmartOperationDialog" timestamp="1583720103834">
       <screen x="67" y="27" width="2491" height="1261" />
     </state>
     <state x="1039" y="319" width="537" height="674" key="git4idea.branch.GitSmartOperationDialog/67.27.2491.1261@67.27.2491.1261" timestamp="1583720103834" />
-    <state x="1020" y="450" width="585" height="413" key="git4idea.merge.GitMergeDialog" timestamp="1583720212988">
+    <state x="1020" y="450" width="585" height="413" key="git4idea.merge.GitMergeDialog" timestamp="1583721683941">
       <screen x="67" y="27" width="2491" height="1261" />
     </state>
-    <state x="1020" y="450" width="585" height="413" key="git4idea.merge.GitMergeDialog/67.27.2491.1261@67.27.2491.1261" timestamp="1583720212988" />
-    <state x="966" y="450" width="683" height="413" key="git4idea.merge.GitPullDialog" timestamp="1583720078618">
-      <screen x="67" y="27" width="2491" height="1261" />
-    </state>
-    <state x="966" y="450" width="683" height="413" key="git4idea.merge.GitPullDialog/67.27.2491.1261@67.27.2491.1261" timestamp="1583720078618" />
-    <state x="1039" y="319" width="537" height="674" key="git4idea.branch.GitSmartOperationDialog" timestamp="1583720103834">
-      <screen x="67" y="27" width="2491" height="1261" />
-    </state>
-    <state x="1039" y="319" width="537" height="674" key="git4idea.branch.GitSmartOperationDialog/67.27.2491.1261@67.27.2491.1261" timestamp="1583720103834" />
+    <state x="1020" y="450" width="585" height="413" key="git4idea.merge.GitMergeDialog/67.27.2491.1261@67.27.2491.1261" timestamp="1583721683941" />
     <state x="966" y="450" width="683" height="413" key="git4idea.merge.GitPullDialog" timestamp="1583720078618">
       <screen x="67" y="27" width="2491" height="1261" />
     </state>
@@ -297,16 +313,16 @@
       <screen x="67" y="27" width="2493" height="1413" />
     </state>
     <state x="796" y="658" width="551" height="195" key="git4idea.ui.GitStashDialog/67.27.2493.1413@67.27.2493.1413" timestamp="1583120619270" />
-    <state x="946" y="344" key="run.anything.popup" timestamp="1583464071761">
+    <state x="946" y="344" key="run.anything.popup" timestamp="1583731110416">
       <screen x="67" y="27" width="2491" height="1261" />
     </state>
     <state x="452" y="201" key="run.anything.popup/0.23.1280.709@0.23.1280.709" timestamp="1583017779375" />
-    <state x="946" y="344" key="run.anything.popup/67.27.2491.1261@67.27.2491.1261" timestamp="1583464071761" />
+    <state x="946" y="344" key="run.anything.popup/67.27.2491.1261@67.27.2491.1261" timestamp="1583731110416" />
     <state x="947" y="382" key="run.anything.popup/67.27.2493.1413@67.27.2493.1413" timestamp="1583125749045" />
-    <state x="975" y="313" width="672" height="606" key="search.everywhere.popup" timestamp="1583700109723">
+    <state x="975" y="313" width="672" height="606" key="search.everywhere.popup" timestamp="1583722432607">
       <screen x="67" y="27" width="2491" height="1261" />
     </state>
-    <state x="975" y="313" width="672" height="606" key="search.everywhere.popup/67.27.2491.1261@67.27.2491.1261" timestamp="1583700109723" />
+    <state x="975" y="313" width="672" height="606" key="search.everywhere.popup/67.27.2491.1261@67.27.2491.1261" timestamp="1583722432607" />
     <state x="976" y="347" width="672" height="678" key="search.everywhere.popup/67.27.2493.1413@67.27.2493.1413" timestamp="1583106573318" />
   </component>
 </project>

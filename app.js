@@ -14,7 +14,8 @@ let db = require('./db')
 let routes = {
   apiRouter: require('./routes/api'),
   dbRouter: require('./routes/db'),
-  indexRouter: require('./routes/index')
+  indexRouter: require('./routes/index'),
+  // productsRouter: require('./routes/products')
 };
 
 let app = express();
@@ -24,6 +25,7 @@ app.set('view engine', 'ejs');
 let apiRouter = routes.apiRouter;
 let dbRouter = routes.dbRouter;
 let indexRouter = routes.indexRouter;
+// let productsRouter = routes.productsRouter;
 
 
 // view engine setup
@@ -51,32 +53,33 @@ app.use(function(req, res, next){
 app.use('/api', apiRouter);
 app.use('/db', dbRouter);
 app.use('/', indexRouter);
+// app.use('/products', productsRouter);
 
-const redirectLogin = (request, response, next) => {
-  if (!request.session.userId) {
-    response.redirect('/login')
-  } else {
-    next()
-  }
-};
+// const redirectLogin = (request, response, next) => {
+//   if (!request.session.userId) {
+//     response.redirect('/login')
+//   } else {
+//     next()
+//   }
+// };
+// //
+// const redirectHome = (request, response, next) => {
+//   if (request.session.userId) {
+//     response.redirect('/home')
+//   } else {
+//     next()
+//   }
+// };
 //
-const redirectHome = (request, response, next) => {
-  if (request.session.userId) {
-    response.redirect('/home')
-  } else {
-    next()
-  }
-};
-//
-app.use((request, response, next) => {
-  const {userId} = request.session;
-  if (userId) {
-    response.locals.user = users.find(
-        user => user.id === userId
-    )
-  }
-  next()
-});
+// app.use((request, response, next) => {
+//   const {userId} = request.session;
+//   if (userId) {
+//     response.locals.user = users.find(
+//         user => user.id === userId
+//     )
+//   }
+//   next()
+// });
 //
 // app.get('/', (request, response) => {
 //   const { userId } = request.session;
