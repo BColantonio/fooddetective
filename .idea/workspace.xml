@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ccdf9438-a8dc-454f-807b-f6048db5f75b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -151,10 +150,10 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="907" y="318" width="800" height="677" key="#Notifications" timestamp="1583720068890">
+    <state x="907" y="318" width="800" height="677" key="#Notifications" timestamp="1583720491052">
       <screen x="67" y="27" width="2491" height="1261" />
     </state>
-    <state x="907" y="318" width="800" height="677" key="#Notifications/67.27.2491.1261@67.27.2491.1261" timestamp="1583720068890" />
+    <state x="907" y="318" width="800" height="677" key="#Notifications/67.27.2491.1261@67.27.2491.1261" timestamp="1583720491052" />
     <state x="851" y="393" width="768" height="462" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog" timestamp="1583175818601">
       <screen x="67" y="27" width="2491" height="1261" />
     </state>
@@ -163,10 +162,10 @@
       <screen x="67" y="27" width="2491" height="1261" />
     </state>
     <state x="575" y="250" width="1195" height="913" key="DiffContextDialog/67.27.2491.1261@67.27.2491.1261" timestamp="1583454874606" />
-    <state x="960" y="464" width="424" height="484" key="FileChooserDialogImpl" timestamp="1583454678414">
+    <state x="960" y="464" width="424" height="484" key="FileChooserDialogImpl" timestamp="1583720461913">
       <screen x="67" y="27" width="2491" height="1261" />
     </state>
-    <state x="960" y="464" width="424" height="484" key="FileChooserDialogImpl/67.27.2491.1261@67.27.2491.1261" timestamp="1583454678414" />
+    <state x="960" y="464" width="424" height="484" key="FileChooserDialogImpl/67.27.2491.1261@67.27.2491.1261" timestamp="1583720461913" />
     <state width="1679" height="429" key="GridCell.Tab.0.bottom" timestamp="1583474595358">
       <screen x="67" y="27" width="2491" height="1261" />
     </state>
@@ -248,6 +247,10 @@
     </state>
     <state x="149" y="23" width="982" height="709" key="SettingsEditor/0.23.1280.709@0.23.1280.709" timestamp="1583135179410" />
     <state x="357" y="27" key="SettingsEditor/67.27.2491.1261@67.27.2491.1261" timestamp="1583455527048" />
+    <state x="907" y="392" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1583720374947">
+      <screen x="67" y="27" width="2491" height="1261" />
+    </state>
+    <state x="907" y="392" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.2491.1261@67.27.2491.1261" timestamp="1583720374947" />
     <state x="640" y="385" key="com.intellij.ide.util.TipDialog" timestamp="1583455511332">
       <screen x="67" y="27" width="2491" height="1261" />
     </state>
