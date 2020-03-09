@@ -18,6 +18,13 @@ router.post('/login', async function(req, res) {
     res.render('index', {title: 'Food Detectives', username: username, userID: results.recordset[0].userID})
 });
 
+router.post('/logout', async function(req, res) {
+  req.session.destroy(function(err) {
+    console.log(err);
+  })
+  res.render('index', {title: 'Food Detectives', message: "Successfully logged out!"})
+});
+
 router.post('/register', async function(req, res) {
     let results;
     let username = req.body.username;

@@ -28,7 +28,7 @@ const basicSearch = (product, response) => {
 
 const advancedSearch = (productId, response) => {
 
-    apiRequest = unirest("GET", `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/products/${productId}`);
+  apiRequest = unirest("GET", `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/products/${productId}`);
 
     apiRequest.headers(headers);
 
@@ -36,9 +36,10 @@ const advancedSearch = (productId, response) => {
 
         if (response.error || apiResponse.error) throw new Error (response.error);
         let details = await apiResponse.body;
-        return response.render('details',
+        return response.render('showDetails',
             {
                 details: details,
+                serverid: productId,
                 title: 'Food Detectives'
             })
     })

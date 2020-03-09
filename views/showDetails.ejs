@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css"/>
+    <link rel='stylesheet' href='/fooddetective/public/stylesheets/style.css' />
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<% include ./partials/header.ejs %>
+<div id="MainBody">
+
+    <% include ./partials/search.ejs %>
+
+
+    <div id="rightBox">
+
+
+        <% if (typeof(serverid) !== 'undefined') {%>
+        <h1 id="getid" hidden><%=serverid%></h1>
+        <% } %>
+        <div id="nutritionfacts" style="text-align: left;">
+            <table width="100%" cellspacing="0" cellpadding="0">
+                <tbody>
+                <tr>
+                    <td align="center" class="header">
+                        <h1 style="font-size: 300%; text-align: center; text-decoration: underline">Nutrition
+                            Facts</h1>
+                    </td>
+                </tr>
+                <% if (typeof(details) !== 'undefined') {%>
+                    <tr>
+                        <td>
+                            <div class="serving">
+                                <h1><%=details.title%></h1>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#000000"></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 7pt">
+                            <div class="line"></div>
+                        </td>
+                    </tr>
+                    <table style="width:100%">
+                        <%details.nutrition.nutrients.forEach(extract => { %>
+                            <tr>
+                                <th><%= extract.title %></th>
+                                <th><%= extract.unit %></th>
+                                <th><%= extract.percentOfDailyNeeds %></th>
+                            </tr>
+                        <%})%>
+                    </table>
+                    <div class="line">
+                        <h1>Badges</h1>
+                        <table style="width:100%">
+                            <%details.badges.forEach(badge => { %>
+                                <tr>
+                                    <th><%= badge %></th>
+                                </tr>
+                            <%})%>
+                        </table>
+                    </div>
+                    </tr>
+                    <tr style="height: 7px">
+                        <td bgcolor="#000000"></td>
+                    </tr>
+                    <tr>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="line">
+                                <h1>Important Badges</h1>
+                                <table style="width:100%">
+                                    <%details.important_badges.forEach(impBadge => { %>
+                                        <tr>
+                                            <th><%= impBadge %></th>
+                                        </tr>
+                                    <%})%>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                <% } %>
+            </table>
+        </div>
+    </div>
+    <div id="LeftBox3">
+        <% if (typeof(details) !== 'undefined') {%>
+            <Center>
+                <img src="<%= details.images[1]%>">
+                <button id="favorite">Favorite</button>
+            </Center>
+        <% } %>
+    </div>
+    <script>
+        if (typeof(req.session.userID === 'undefined')) {
+          console.log('asdgasgas')
+        }
+    </script>
+</div>
+<% include ./partials/footer %>
+</div>
+<script src="/scripts/favorite.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+</body>
+
+</html>

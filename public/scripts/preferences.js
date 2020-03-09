@@ -1,16 +1,11 @@
-$(document).ready(() => {
-    $("#submitBtn").on("click", (e) =>{
-
-            let diet = $( "input:checked" ).val()
-            alert(diet);
-            // get preferences
-            $.get("/db/getPreferences")
-            // if no preferences exist, post new preference.
-            $.post("/db/addPreferences", {diet: diet});
-            // else patch new preference
-            e.preventDefault();
-
-    });
-
-
-});
+// $(document).ready(() => {
+//
+//   $('#favorite').click(() => {
+//     let id = $( "#getid" ).html();
+//     console.log($( "#getid" ).html());
+//     $.post("/db/favorite", {productID: id}, function (data) {
+//       console.log(data.message)
+//       alert("Success: Item added to favorites.");
+//     })
+//   })
+// });
