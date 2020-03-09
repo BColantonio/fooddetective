@@ -65,9 +65,9 @@ async function saveFavoriteSQL(
     let pool = await mssql.connect(config);
     let connector = async () => {
         return pool.request()
-          .input('userid', mssql.uniqueidentifier, this.userID)
-          .input('favoritesSplitByComma', mssql.VarChar(max), this.productID)
-          .execute('usp_Favorites_ModifyUserFavorites')
+          .input('userid', mssql.VarChar(255), this.userID)
+          .input('favoritesSplitByComma', mssql.VarChar(50), this.productID)
+          .execute('usp_Favorites_ModifyUserFavorites_ByUser')
     };
     return await connector();
 }

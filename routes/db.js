@@ -18,6 +18,13 @@ router.post('/login', async function(req, res) {
     res.render('index', {title: 'Food Detectives', username: username, userID: results.recordset[0].userID})
 });
 
+router.post('/logout', async function(req, res) {
+  req.session.destroy(function(err) {
+    console.log(err);
+  })
+  res.render('index', {title: 'Food Detectives', message: "Successfully logged out!"})
+});
+
 router.post('/register', async function(req, res) {
     let results;
     let username = req.body.username;
@@ -32,18 +39,18 @@ router.post('/register', async function(req, res) {
 });
 
 router.post('/favorite', async function(req, res) {
-  if (req.session.userID) {
     let results;
     let userID = req.session.userID;
+    console.log(typeof(userID));
     let productID = req.body.productID;
     console.log(userID, productID)
     results = await db.saveFavorite(userID, productID);
     console.log(results);
     // req.session['userID'] = results.recordset[0].userID;
     res.end();
-  } else {
-    res.render('showDetails', { message: "Sorry, you must be logged in for that." })
-  }
+  // } else {
+  //   res.render('showDetails', { message: "Sorry, you must be logged in for that." })
+  // }
 });
 router.get('/preferences', async function(req, res) {
   res.render('preferences', {title: "Food Detectives"})

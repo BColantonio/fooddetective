@@ -30,5 +30,12 @@
     </div>
   <% include ./partials/footer.ejs %>
 </div>
+<script>
+    $(document).ready(() => {
+        <%if (typeof(message) !== 'undefined') { %>
+        alert(<%=message%>)
+   <% } %>
+    })
+</script>
 </body>
 </html>
