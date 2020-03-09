@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Detectives</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+    <script src="/scripts/preferences.js"></script>
+    <link rel="icon"
+          type="image/png"
+          href="images/favicon.png">
+</head>
+<body>
+<% include ./partials/header %>
+<div id="MainBody">
+    <% include ./partials/search.ejs %>
+    <div id="rightBox">
+        <div>
+            <h1 id="main-title">Sign Up</h1>
+            <p id="subtitle">It only takes a minute!</p>
+            <p id="more" style="color: coral; padding: 1.5em; font-weight:bold;">Great! Now just tell us a little bit more about yourself.</p>
+        </div>
+        <div>
+            <form id="signupBox" method="post">
+                <label>Username</label>
+                <input type="text" name="username" class="form-control" aria-describedby="emailHelp" value="<%=userInfo.firstName%>">
+                <label>Password</label>
+                <input type="password" name="password0" class="form-control"value="<%=userInfo.password%>">
+                <label>First Name</label>
+                <input type="text" name="firstName" class="form-control" value="<%=userInfo.firstName%>">
+                <label>Last Name</label>
+                <input type="text" name="lastName" class="form-control" value="<%=userInfo.lastName%>">
+                <label for="exampleInputEmail1">Email Address</label>
+                <input type="email" name="email" class="form-control" aria-describedby="emailHelp"value="<%=userInfo.email%>">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <p id="more1" style="color: coral; font-weight: bold">The dietary preferences you choose will be used to filter your search results</p>
+                <input type="radio" id="diet0" name="diet" value="vegetarian">
+                <label for="diet0">Vegetarian</label><br>
+                <input type="radio" id="diet1" name="diet" value="vegan">
+                <label for="diet1">Vegan</label><br>
+                <input type="radio" id="diet2" name="diet" value="gluten-free">
+                <label for="diet2">glutenFree</label><br>
+                <input id="submitBtn" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

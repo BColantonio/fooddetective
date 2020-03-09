@@ -1,0 +1,19 @@
+<link rel='stylesheet' href='/stylesheets/style.css' />
+
+<header>
+    <div class="logobody">
+        <!-- Photo Grid -->
+        <div class="logorow">
+            <div class="logocolumn">
+                <a href="/">
+                    <img src="/images/image0.png" style="width:100%;">
+                </a>
+            </div>
+        </div>
+    </div>
+    <% if (typeof userID === 'undefined') { %>
+        <% include ./login.ejs %>
+            <% } else { %>
+                <% include ./menuContent.ejs %>
+                    <% } %>
+</header>

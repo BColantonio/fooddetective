@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="/scripts/index.js"></script>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+<body>
+    <div id="flexstyles">
+        <% include ./partials/header.ejs %>
+            <% include ./partials/search.ejs %>
+                <div id="left&right">
+                    <div id="LeftBox">
+                        <div id="content">
+                            <h1 style="text-align:center; font-size: 300%; color: rgb(245,136,40);">Our Mission</h1>
+                            <p id="blabla">Whether it be allergies, dietary restrictions, or ethical standards, its fair to assume that most of us have other activities we prefer over standing around in grocery stores and reading product labels. Food Detective is designed
+                                to quickly and easily provide all the information you will need to maintain your dietary lifestyle. Our time is valuable.</br> --Let’s take it back! </p>
+                        </div>
+                    </div>
+                    <div id="rightBox">
+                        <% include ./partials/userForm.ejs%>
+                    </div>
+                </div>
+                <% include ./partials/footer.ejs %>
+    </div>
+</body>
+
+</html>
