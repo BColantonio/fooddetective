@@ -46,19 +46,8 @@ router.post('/favorite', async function(req, res) {
   }
 });
 router.get('/preferences', async function(req, res) {
-  console.log('fuck ')
   res.render('preferences', {title: "Food Detectives"})
-  // if (req.session.userID) {
-    // let results;
-    // let userID = req.session.userID;
-    // let productID = req.body.productID;
-    // console.log(userID, productID)
-    // results = await db.saveFavorite(userID, productID);
-    // console.log(results);
-    // req.session['userID'] = results.recordset[0].userID;
-    // res.end();
-  // } else {
-  // }
+
 });
 // const redirectLogin = (request, response, next) => {
 //     if (!request.session.userId) {
