@@ -17,216 +17,421 @@ body {
 header {
   display: inline-flex;
 }
+
 #search {
   margin: 1% 0;
 }
+
 #MainBody {
   width: 70%;
   height: auto;
-  flex-direction: row ;
-  justify-content:space-between;
+  flex-direction: row;
+  justify-content: space-between;
   flex-wrap: wrap;
   display: inline-flex;
   /* border: solid rgb(191, 29, 206) 2px; */
 }
 
 #LeftBox {
-  flex-grow:1;
-  max-width:45%;
+  flex-grow: 1;
+  max-width: 45%;
   /*min-width: 30%;*/
   /*width: 40%;*/
   /*height: 700px;*/
   background: rgba(255, 255, 255, 0.692);
-   /* border: solid rgb(191, 29, 206) 2px; */
+  /* border: solid rgb(191, 29, 206) 2px; */
   border-radius: 25px;
   /*margin-top: 50px;*/
   /*margin-left: 100px;*/
   /*order: 1;*/
   /*flex-wrap: wrap;*/
-
-
-
 }
+
 #content {
   display: flex;
   flex-direction: column;
 }
-#blabla{
 
+#blabla {
   margin-left: 10px;
   margin-top: 10%;
-  font-size:30px;
-  color:rgb(15,150,76);
+  font-size: 30px;
+  color: rgb(15, 150, 76);
   word-wrap: normal;
   text-align: justify;
   padding: 2%;
   line-height: 2.5;
 }
+
 #rightBox {
-  flex-grow:1;
-  max-width:45%;
+  flex-grow: 1;
+  max-width: 45%;
   background: rgba(255, 255, 255, 0.692);
   border-radius: 25px;
-
-
 }
 
 footer {
   display: flex;
   justify-content: center;
 }
+
+
 /*#LeftBox2 {*/
+
+
 /*  min-width: 30%;*/
+
+
 /*  width: 100%;*/
+
+
 /*  background: rgba(255, 255, 255, 0.692);*/
+
+
 /*  border-radius: 25px;*/
+
+
 /*  margin-top: 50px;*/
+
+
 /*  align-self: center;*/
+
+
 /*  display: flex;*/
+
+
 /*  justify-content: center;*/
 
+
 /*}*/
 
-/*#LeftBox3 {*/
-/*  margin-top: 10%;*/
-/*  margin-left: 100px;*/
-/*  !* border: solid rgb(191, 29, 206) 2px; *!*/
-/*  padding: 20px;*/
-/*  margin-bottom: 50px;*/
-/*  order: 1;*/
-/*  flex-wrap: wrap;*/
-/*}*/
+#LeftBox3 {
+  margin-top: 10%;
+  margin-left: 100px;
+  //border: solid rgb(191, 29, 206) 2px;
+  padding: 20px;
+  margin-bottom: 50px;
+  order: 1;
+  flex-wrap: wrap;
+}
 
 
 /*#rightBox {*/
+
+
 /*  !* float: right; *!*/
+
+
 /*  !*width: 40%;*!*/
+
+
 /*  !* border: solid rgb(191, 29, 206) 2px; *!*/
+
+
 /*  background: rgba(255, 255, 255, 0.692);*/
+
+
 /*  border-radius: 25px;*/
+
+
 /*  !*margin-right: 100px;*!*/
+
+
 /*  !*margin-top: 50px;*!*/
+
+
 /*  !*order: 2;*!*/
+
+
 /*  !*flex-wrap: wrap;*!*/
 
 
-
 /*}*/
+
 
 /*#RightBox2 {*/
+
+
 /*  float: right;*/
+
+
 /*  margin-left: 39px;*/
-/*  width: 40%;*/
-/*  !* border: solid rgb(191, 29, 206) 2px; *!*/
-/*  background: rgba(255, 255, 255, 0.692);*/
-/*  margin-top: 80px;*/
-/*  margin-right: 55px;*/
-/*  border-radius: 25px;*/
-/*}*/
-/*#RightBox3 {*/
+
 
 /*  width: 40%;*/
+
+
 /*  !* border: solid rgb(191, 29, 206) 2px; *!*/
+
+
 /*  background: rgba(255, 255, 255, 0.692);*/
-/*  margin-top: 20px;*/
+
+
+/*  margin-top: 80px;*/
+
+
 /*  margin-right: 55px;*/
+
+
 /*  border-radius: 25px;*/
-/*  order: 2;*/
-/*  flex-wrap: wrap;*/
+
+
 /*}*/
+
+#RightBox3 {
+  width: 40%;
+  //border: solid rgb(191, 29, 206) 2px;
+  background: rgba(255, 255, 255, 0.692);
+  margin-top: 20px;
+  margin-right: 55px;
+  border-radius: 25px;
+  order: 2;
+  flex-wrap: wrap;
+}
+
 
 /*#Favbox {*/
+
+
 /*  width: 95%;*/
+
+
 /*  height: 1000px;*/
+
+
 /*  !* background: rgba(255, 255, 255, 0.692); *!*/
+
+
 /*  !* border: solid rgb(191, 29, 206) 2px; *!*/
+
+
 /*  margin-left: 30px;*/
+
+
 /*}*/
+
 
 /*#prefbox {*/
+
+
 /*  !* border: solid rgb(191, 29, 206) 2px; *!*/
+
+
 /*  margin-left: 25px;*/
+
+
 /*  width: 50%;*/
+
+
 /*}*/
+
+
 /*#productsTable {*/
+
+
 /*  width: 100%;*/
+
+
 /*}*/
+
+
 /*#search {*/
+
+
 /*  min-width:100% ;*/
+
+
 /*  width: 35%;*/
+
+
 /*  margin: auto;*/
+
+
 /*  !*border: solid rgb(50, 206, 29) 2px; *!*/
+
+
 /*  margin-bottom: 25px;*/
+
+
 /*  text-align: center;*/
+
+
 /*}*/
+
 
 /*#login2 {*/
+
+
 /*  float: right;*/
+
+
 /*  width: 20%;*/
+
+
 /*  height: 200px;*/
+
+
 /*  !* border: solid rgb(191, 29, 206) 2px; *!*/
+
+
 /*  margin-top: 25px;*/
+
+
 /*  margin-right: 25px;*/
+
 
 /*}*/
 
+
 /*#ProdName{*/
+
+
 /*color:rgb(15,150,76);*/
+
 
 /*}*/
 
 
 /*footer {*/
-/*  text-align: center;*/
-/*  clear: both;*/
-/*  width: 100%;*/
-/*  !* background: rgba(255, 146, 82, 0.5); *!*/
-/*  height: 60px;*/
-/*  !* border: solid rgb(186, 12, 230) 2px; *!*/
-/*}*/
 
+
+/*  text-align: center;*/
+
+
+/*  clear: both;*/
+
+
+/*  width: 100%;*/
+
+
+/*  !* background: rgba(255, 146, 82, 0.5); *!*/
+
+
+/*  height: 60px;*/
+
+
+/*  !* border: solid rgb(186, 12, 230) 2px; *!*/
+
+
+/*}*/
 
 
 /*#logo {*/
+
+
 /*  float: left;*/
+
+
 /*  width: 20%;*/
+
+
 /*  min-width: 15%;*/
+
+
 /*  height: 70%;*/
+
+
 /*  !* border: solid rgb(191, 29, 206) 2px; *!*/
+
+
 /*  margin-top: 25px;*/
+
+
 /*  margin-left: 10px;*/
+
+
 /*  background-image: url(../images/image0.png);*/
+
+
 /*  background-size: 100% 100%;*/
+
+
 /*  !* background-repeat: no-repeat; *!*/
+
+
 /*  position: relative;*/
 
+
 /*}*/
+
+
 /*#myButton {*/
+
+
 /*	box-shadow:inset 0px 1px 0px 0px #fce2c1;*/
+
+
 /*	background:linear-gradient(to bottom, #ffc477 5%, #fb9e25 100%);*/
+
+
 /*	background-color:#ffc477;*/
+
+
 /*	border-radius:23px;*/
+
+
 /*	border:3px solid #eeb44f;*/
+
+
 /*	display:inline-block;*/
+
+
 /*	cursor:pointer;*/
+
+
 /*	color:#ffffff;*/
+
+
 /*	font-family:Arial;*/
+
+
 /*	font-size:19px;*/
+
+
 /*	font-weight:bold;*/
+
+
 /*	padding:11px 9px;*/
+
+
 /*	text-decoration:none;*/
+
+
 /*  text-shadow:0px 1px 0px #cc9f52;*/
+
+
 /*  margin-left: 50px;*/
+
+
 /*  margin-right: 5px;*/
+
+
 /*}*/
+
+
 /*#myButton:hover {*/
+
+
 /*  background:linear-gradient(to bottom, #fb9e25 5%, #ffc477 100%);*/
+
+
 /*	background-color:#fb9e25;*/
+
+
 /*}*/
+
+
 /*#myButton:active {*/
+
+
 /*	position:relative;*/
+
+
 /*	top:1px;*/
+
+
 /*}*/
+
 
 /*registration -----------------------------------------------------------------------------------------------------*/
 
@@ -242,7 +447,7 @@ footer {
 #subtitle {
   text-align: center;
   font-size: 14px;
-  color: rgb(245,136,40);
+  color: rgb(245, 136, 40);
 }
 
 form {
@@ -254,7 +459,6 @@ form {
   /* border: 2px red solid; */
   width: 100%;
   height: 35px;
-
 }
 
 #terms-conditions {
@@ -269,13 +473,13 @@ form {
   margin: auto;
   text-align: center;
   padding: 10px 30px 10px 30px;
-  border: 1px solid rgb(245,136,40);
+  border: 1px solid rgb(245, 136, 40);
   background-color: white;
   border-radius: 3px;
   cursor: pointer;
   width: 100%;
   font-size: 14px;
-  color: rgb(15,150,76);
+  color: rgb(15, 150, 76);
   font-weight: 700;
 }
 
@@ -294,10 +498,12 @@ form {
 
 
 /* search bar-------------------------------------------------------------------------------------------*/
+
 .searchProperties {
   display: flex;
   justify-content: center;
 }
+
 .searchProperties form {
   background: rgba(94, 91, 91, 0.541);
   background: linear-gradient(#74707065, rgba(155, 153, 153, 0.384));
@@ -320,7 +526,6 @@ form {
   margin: 0;
   width: 70%;
   margin-left: 10px;
-
 }
 
 .ie .searchProperties input {
@@ -347,13 +552,11 @@ form {
   padding: 0;
   position: relative;
   width: 25%;
-
 }
 
 .searchProperties button:hover {
   background: rgb(240, 90, 40);
 }
-
 
 
 /* login------------------------------------------------------------------------------------------------------------------------ */
@@ -543,7 +746,6 @@ nav ul li:hover a {
   background-color: white;
   border: 1px solid black;
   width: 100%;
-
 }
 
 #nutritionfacts td {
@@ -562,7 +764,6 @@ nav ul li:hover a {
 
 #nutritionfacts div.label {
   float: left;
-
 }
 
 #nutritionfacts div.serving {
@@ -574,13 +775,11 @@ nav ul li:hover a {
 #nutritionfacts div.weight {
   display: inline;
   font-family: Arial, Helvetica, sans-serif;
-
 }
 
 #nutritionfacts div.dv {
   display: inline;
   float: right;
-
 }
 
 #nutritionfacts table.vitamins td {
@@ -592,11 +791,10 @@ nav ul li:hover a {
 #nutritionfacts div.line {
   border-top: 1px solid black;
 }
-#testline{
 
+#testline {
   border-top: 1px solid black;
   width: 100%;
-
 }
 
 #nutritionfacts div.labellight {
@@ -626,7 +824,9 @@ nav ul li:hover a {
   padding: 0 4px;
 }
 
+
 /* Create four equal columns that sits next to each other */
+
 .logocolumn {
   flex: 25%;
   max-width: 25%;
@@ -638,7 +838,9 @@ nav ul li:hover a {
   vertical-align: middle;
 }
 
+
 /* Responsive layout - makes a two column-layout instead of four columns */
+
 @media (max-width: 800px) {
   .logocolumn {
     flex: 50%;
@@ -646,7 +848,9 @@ nav ul li:hover a {
   }
 }
 
+
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+
 @media (max-width: 600px) {
   .logocolumn {
     flex: 100%;

@@ -36,7 +36,7 @@ const advancedSearch = (productId, response) => {
 
         if (response.error || apiResponse.error) throw new Error (response.error);
         let details = await apiResponse.body;
-        return response.render('showDetails',
+        return response.render('details',
             {
                 details: details,
                 serverid: productId,

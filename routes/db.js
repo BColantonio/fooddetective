@@ -49,7 +49,7 @@ router.post('/favorite', async function(req, res) {
     // req.session['userID'] = results.recordset[0].userID;
     res.end();
   } else {
-    res.render('showDetails', { message: "Sorry, you must be logged in for that." })
+    res.render('details', { message: "Sorry, you must be logged in for that." })
   }
 });
 // const redirectLogin = (request, response, next) => {

@@ -1,49 +1,55 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title><%= title %></title>
-    
+    <title>
+        <%= title %>
+    </title>
+
     <link rel='stylesheet' href='/fooddetective/public/stylesheets/style.css' />
-    <script
-            src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-            crossorigin="anonymous"></script>
-    <link rel="icon"
-          type="image/png"
-          href="images/favicon.png">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
+
 <body>
-      <% include ./partials/header.ejs %>
-<div id="MainBody">
-<% include ./partials/search.ejs %>
+<% include ./partials/header.ejs %>
+<div id="flexbody">
+    <% include ./partials/search.ejs %>
 
 
-<div id="LeftBox2">
-  
-    <table class="table" id="productsTable" style="text-align: left  ; ">
+    <div id="left&right">
 
-        <tbody>
-        <% products.forEach( product => { %>
+        <table class="table" id="productsTable" style="text-align: left  ; ">
+
+            <tbody>
+            <% products.forEach( product => { %>
             <tr>
-                <script>let getprodID = '<%=product.id%>'</script>
+                <script>
+                  let getprodID = '<%=product.id%>'
+                </script>
                 <%let id=product.id%>
                 <form id="<%= id %>" action="/api/advancedSearch" enctype="application/x-www-form-urlencoded">
-                    <th id="title" scope="row"><a id=" ProdName" style="color:rgb(15,150,76)" href="#"><%= product.title %></a></th>
+                    <th id="title" scope="row">
+                        <a id=" ProdName" style="color:rgb(15,150,76)" href="#">
+                            <%= product.title %>
+                        </a>
+                    </th>
                     <td><input type="radio" id="<%=product.id%>" name="productId" value="<%=product.id%>"></td>
                     <td><img id="img<%= id%>" src="<%= product.image %>" value="<%=product.id%>"></td>
                     <td><input type="submit" id="myButton" value="GO"></td>
                 </form>
             </tr>
-        <script src="/scripts/basicSearch.js"></script>
-        <% }); %>
-        </tbody>
-    </table>
+            <script src="/scripts/basicSearch.js"></script>
+            <% }); %>
+            </tbody>
+        </table>
 
-</div>
+    </div>
 
 </div>
 <% include ./partials/footer %>
 <script src="/scripts/basicSearch.js"></script>
 
 </body>
+
 </html>
