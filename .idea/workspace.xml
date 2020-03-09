@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ccdf9438-a8dc-454f-807b-f6048db5f75b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partials/header.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/header.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +27,11 @@
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="brianssunday" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -151,6 +156,10 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
+    <state x="907" y="318" width="800" height="677" key="#Notifications" timestamp="1583720491052">
+      <screen x="67" y="27" width="2491" height="1261" />
+    </state>
+    <state x="907" y="318" width="800" height="677" key="#Notifications/67.27.2491.1261@67.27.2491.1261" timestamp="1583720491052" />
     <state x="907" y="318" width="800" height="677" key="#Notifications" timestamp="1583720068890">
       <screen x="67" y="27" width="2491" height="1261" />
     </state>
@@ -163,10 +172,10 @@
       <screen x="67" y="27" width="2491" height="1261" />
     </state>
     <state x="575" y="250" width="1195" height="913" key="DiffContextDialog/67.27.2491.1261@67.27.2491.1261" timestamp="1583454874606" />
-    <state x="960" y="464" width="424" height="484" key="FileChooserDialogImpl" timestamp="1583454678414">
+    <state x="960" y="464" width="424" height="484" key="FileChooserDialogImpl" timestamp="1583720461913">
       <screen x="67" y="27" width="2491" height="1261" />
     </state>
-    <state x="960" y="464" width="424" height="484" key="FileChooserDialogImpl/67.27.2491.1261@67.27.2491.1261" timestamp="1583454678414" />
+    <state x="960" y="464" width="424" height="484" key="FileChooserDialogImpl/67.27.2491.1261@67.27.2491.1261" timestamp="1583720461913" />
     <state width="1679" height="429" key="GridCell.Tab.0.bottom" timestamp="1583474595358">
       <screen x="67" y="27" width="2491" height="1261" />
     </state>
@@ -239,11 +248,19 @@
       <screen x="67" y="27" width="2493" height="1413" />
     </state>
     <state width="2447" height="488" key="GridCell.Tab.3.right/67.27.2493.1413@67.27.2493.1413" timestamp="1583105963175" />
+    <state x="1017" y="374" width="580" height="564" key="MultipleFileMergeDialog" timestamp="1583720180538">
+      <screen x="67" y="27" width="2491" height="1261" />
+    </state>
+    <state x="1017" y="374" width="580" height="564" key="MultipleFileMergeDialog/67.27.2491.1261@67.27.2491.1261" timestamp="1583720180538" />
     <state x="357" y="27" width="982" height="709" key="SettingsEditor" timestamp="1583455527048">
       <screen x="67" y="27" width="2491" height="1261" />
     </state>
     <state x="149" y="23" width="982" height="709" key="SettingsEditor/0.23.1280.709@0.23.1280.709" timestamp="1583135179410" />
     <state x="357" y="27" key="SettingsEditor/67.27.2491.1261@67.27.2491.1261" timestamp="1583455527048" />
+    <state x="907" y="392" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1583720374947">
+      <screen x="67" y="27" width="2491" height="1261" />
+    </state>
+    <state x="907" y="392" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.2491.1261@67.27.2491.1261" timestamp="1583720374947" />
     <state x="640" y="385" key="com.intellij.ide.util.TipDialog" timestamp="1583455511332">
       <screen x="67" y="27" width="2491" height="1261" />
     </state>
@@ -256,6 +273,18 @@
     <state x="0" y="182" width="818" height="550" key="find.popup/0.23.1280.709@0.23.1280.709" timestamp="1583188931519" />
     <state x="423" y="89" width="1593" height="979" key="find.popup/67.27.2491.1261@67.27.2491.1261" timestamp="1583707546241" />
     <state x="772" y="337" width="1594" height="1097" key="find.popup/67.27.2493.1413@67.27.2493.1413" timestamp="1583105403739" />
+    <state x="1039" y="319" width="537" height="674" key="git4idea.branch.GitSmartOperationDialog" timestamp="1583720103834">
+      <screen x="67" y="27" width="2491" height="1261" />
+    </state>
+    <state x="1039" y="319" width="537" height="674" key="git4idea.branch.GitSmartOperationDialog/67.27.2491.1261@67.27.2491.1261" timestamp="1583720103834" />
+    <state x="1020" y="450" width="585" height="413" key="git4idea.merge.GitMergeDialog" timestamp="1583720212988">
+      <screen x="67" y="27" width="2491" height="1261" />
+    </state>
+    <state x="1020" y="450" width="585" height="413" key="git4idea.merge.GitMergeDialog/67.27.2491.1261@67.27.2491.1261" timestamp="1583720212988" />
+    <state x="966" y="450" width="683" height="413" key="git4idea.merge.GitPullDialog" timestamp="1583720078618">
+      <screen x="67" y="27" width="2491" height="1261" />
+    </state>
+    <state x="966" y="450" width="683" height="413" key="git4idea.merge.GitPullDialog/67.27.2491.1261@67.27.2491.1261" timestamp="1583720078618" />
     <state x="1039" y="319" width="537" height="674" key="git4idea.branch.GitSmartOperationDialog" timestamp="1583720103834">
       <screen x="67" y="27" width="2491" height="1261" />
     </state>
