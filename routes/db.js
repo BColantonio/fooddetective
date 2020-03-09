@@ -1,38 +1,35 @@
-const _ = require('lodash');
-const bodyParser = require('body-parser')
-const express = require('express');
-const path = require('path');
-const router = express.Router();
-const session = require('express-session');
-const NODE_ENV = 'development';
-const IN_PROD = NODE_ENV === 'production';
-const SESS_NAME = 'sid';
-const SESS_SECRET = ' asdf ';
-const db = require('../db');
-const sql = require('mssql');
-// const users = [
-//     { id: 1, name: 'John', email: 'john@gmail.com', password: '1234' },
-//     { id: 2, name: 'Sam', email: 'sam@gmail.com', password: '1234' },
-//     { id: 3, name: 'Bill', email: 'bill@gmail.com', password: '1234' }
-// ]
-//
-// router.use(bodyParser.urlencoded({
-//     extended: true
-// }))
-// router.use(session({        // TODO: look into session store
-//     name: SESS_NAME,
-//     resave: false,                  // rolling: Force a session identifier cookie to be set on every response.
-//     saveUninitialized: false,       //          The expiration is reset to the original maxAge, resetting the expiration
-//     secret: SESS_SECRET,            //          countdown.          The default value is: false.
-//     cookie: {                       // NOTE:    When this option is set to: true; but the <saveUninitialized> option is set
-//         maxAge: 900000,             //          to: false, the cookie will not be set on a response with an uninitialized session.
-//         sameSite: true,             //          It only makes sense to issue a cookie if user is authenticated. If you are not authenticated
-//         secure: IN_PROD             //          there is no id to issue
-//     }
-// }));                                // store:   DB implementation for session stores. When this isn't provided, default: is :in-memory: store.
-//                                     // unset:   allows for session var access through the request object for every connection to the server
-//                                     // destroy: useful for when user logs out.
-//                                     // regenerate:
+let _ = require('lodash');
+let bodyParser = require('body-parser');
+let express = require('express');
+let router = express.Router();
+let db = require('../db');
+
+router.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+router.post('/login', async function(req, res) {
+    let results;
+    let username = req.body.username;
+    let password = req.body.password;
+    results = await db.login(username, password);
+    console.log(results);
+    req.session['userID'] = results.recordset[0].userID;
+    res.render('index', {title: 'Food Detectives', username: username, userID: results.recordset[0].userID})
+});
+
+router.post('/register', async function(req, res) {
+    let results;
+    let username = req.body.username;
+    let password = req.body.password;
+    let firstName = req.body.firstName;
+    let lastName = req.body.lastName;
+    let emailAddress = req.body.emailAddress;
+    results = await db.register(username, password, firstName, lastName, emailAddress);
+    console.log(results);
+    req.session['userID'] = results.recordset[0].userID;
+    res.render('index', {title: 'Food Detectives', username: username, userID: results.recordset[0].userID})
+});
 // const redirectLogin = (request, response, next) => {
 //     if (!request.session.userId) {
 //         response.redirect('/login')
